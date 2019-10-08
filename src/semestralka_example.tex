@@ -1,0 +1,103 @@
+% options:
+% thesis=B bachelor's thesis
+% thesis=M master's thesis
+% czech thesis in Czech language
+% slovak thesis in Slovak language
+% english thesis in English language
+% hidelinks remove colour boxes around hyperlinks
+
+\documentclass[thesis=B,czech]{FITthesis}[2012/06/26]
+
+\usepackage[utf8]{inputenc} % LaTeX source encoded as UTF-8
+
+\usepackage{graphicx} %graphics files inclusion
+% \usepackage{amsmath} %advanced maths
+% \usepackage{amssymb} %additional math symbols
+
+%\usepackage{stdpage} % nastaveni normostrany
+\usepackage{dirtree} %directory tree visualisation
+
+\usepackage{hyphenat}
+
+% % list of acronyms
+% \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
+% \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
+% \makeglossaries
+
+\newcommand{\tg}{\mathop{\mathrm{tg}}} %cesky tangens
+\newcommand{\cotg}{\mathop{\mathrm{cotg}}} %cesky cotangens
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% ODTUD DAL VSE ZMENTE
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\department{Katedra aplikované matematiky}
+\title{Forenzní analýza v IT}
+\authorGN{Ladislav} %(křestní) jméno (jména) autora
+\authorFN{Martínek} %příjmení autora
+\authorWithDegrees{Bc. Ladislav Martínek} %jméno autora včetně současných akademických titulů
+
+\abstractCS
+{
+  Forenzní analýza v IT
+}
+
+\abstractEN
+{
+  Forenzní analýza v IT
+}
+
+
+\placeForDeclarationOfAuthenticity{TODO}
+
+\keywordsCS
+{
+  Forenzní analýza v IT
+}
+\keywordsEN
+{
+  Forenzní analýza v IT
+}
+
+\begin{document}
+
+% \newacronym{CVUT}{{\v C}VUT}{{\v C}esk{\' e} vysok{\' e} u{\v c}en{\' i} technick{\' e} v Praze}
+% \newacronym{FIT}{FIT}{Fakulta informa{\v c}n{\' i}ch technologi{\' i}}
+
+\begin{introduction}
+  \label{sec:uvod}
+
+  
+
+\end{introduction}
+
+\chapter{Typy}
+
+       \cite{cisco_intro}
+
+\chapter{Bezpečnost}
+
+Jak už bylo výše uvedeno, některé VPN provoz šifrují, jiné naopak počítají s tím, že se 
+
+  \section{Aktuální hrozby}
+
+  
+\begin{conclusion}
+ Forenzní analýza v IT
+\end{conclusion}
+
+\bibliographystyle{csn690}
+\bibliography{biblio}
+
+\appendix
+
+\chapter{Seznam použitých zkratek}
+% \printglossaries
+\begin{description}
+
+    \item[IT] Information technology
+
+
+\end{description}
+
+\end{document}

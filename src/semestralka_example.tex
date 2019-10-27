@@ -104,18 +104,42 @@ Jak se píše v \cite{for_uvod}, počítačová forenzní věda je ve svém jád
 Mezi hlavní kroky forenzní analýzi podle \cite{carroll2008computer} tedy můžeme považovat kroky: zabavení, získávání, validace a identifikace, analýza a vykazování výsledků, které potom podrobněji popíši v nasledujících sekcích.
 
 \subsection{Zabavení}
-kroky k získání přístupu k (zabavení) zdrojům tam, kde jsou požadovaná data\cite{for_sez}
-usiluje o zajištění uchování důkazů
+Krok zabavení zahrnuje označení prvků, které budou použity v pozdějších procesech. Jsou pořizovány fotografie scény a poznámky. Například počítač je nutné zapečetit, aby nemohlo být napadeno to, že byl obsah modifikován. V \cite{for_sez} zmiňuje zajímavou otázku, na kterou je třeba v tuto fázi odpovědět: Vytáhnout zástrčku v síti nebo ne. Ponechání systému online během pokračování může útočníka upozornit, což mu umožní vymazat stopy útoku a zničit důkazy. Útočník může také nechat přepínač, který zničí důkazy, jakmile se systém přepne do režimu offline. Za takových okolností může být nutné nebo vhodné shromáždit důkazy ze systému, když je spuštěn. Pro přijetí jakéhokoliv postupu je nutné kroky vysvětlit. Cílem fáze je zajištění a uchování důkazů.
+
 \subsection{Získávání}
-zobrazení a duplikace dat uložených v elektronickém formátu
+Po první fázi je přistopeno k získávání dat. Součástí této fáze je většinou i fáze duplikace, kdy je kopie dat bezpečně uložena. Data musí být získána beze změny nebo poškození zdroje, který má být analyzován později. Nezákonné zabavení nebo nevhodný postup může ovlivnit platnosti důkazů u soudu. Z tohoto důvodu by metody získávání důkazů měly být forenzně spolehlivé a ověřitelné. Získavání může být fyzická nebo logická. Při fyzickém získávání je bitový obraz snímán z fyzického paměťového média, zatímco v logickém získávání je řídký nebo logický obraz zachycen z paměťového média. V obou případech je třeba použít writeblockery, aby se zabránilo úpravě důkazů. Podle \cite{for_sez} se vždy doporučuje zahájit snímání od nejmenších po nejmenší data. Pořádí důležitosti je pak: 
+
+\begin{enumerate}
+\item Registry, cache
+\item Stav sítě (mezipaměť ARP a směrovací tabulka)
+\item Běžící procesy
+\item Moduly a statistiky jádra
+\item Hlavní paměť
+\item Dočasné soubory na disku
+\end{enumerate}
+
+
 \subsection{Validace a identifikace}
-jak jsou data validní a jestli nejsou podvržená například, identifikace důležitých dat
+
+Data jsou tedy většinou duplikována na jiné médium. Duplicitní obrázek musí být ověřen jestli je totožný se zdrojem, porovnáním hodnoty hash získaného obrazu nebo kopie a původních dat médií nebo kontrolním součtem.
+
+
+Podle \cite{carroll2008computer} je postup následující: Technici opakují proces identifikace pro každou položku v seznamu extrahovaných dat. Nejprve určují, o jaký typ položky jde. Pokud pro forenzní žádost není relevantní, jednoduše ji označí jako zpracovanou a přesunou se dále. Stejně jako ve fyzickém vyhledávání, pokud technik narazí na věc, která je usvědčující, ale mimo rozsah původního příkazu k prohlídce, doporučuje se, aby examinátor okamžitě zastavil veškerou činnost, informoval příslušné osoby, včetně žadatele, a počkal pro další pokyny. Například orgány činné v trestním řízení by mohly zabavit počítač jako důkaz o daňových podvodech, ale zkoušející může najít obrázek z jiné trestné čínnosti. Důležité je se pokusit rožšířit pravomoce pro další práci.
+
+Dále také technik může data, která ukazují na zcela nový potenciální zdroj dat. Například mohou najít nový e-mailový účet. V tomto okamžiku je vhodné, aby zkoušející informovali žadatele o svých počátečních zjištěních.
+
 \subsection{Analýza}
-Analýza dat
+Ve fázi analýzy připojí technik všechny zjištěné informace a vykreslí kompletní obrázek pro žadatele\cite{carroll2008computer}. U každé položky v seznamu relevantních údajů technici odpovídají na otázky zmíněné v úvodu a to co, kdy, kde, kdo a jak. Je zde snaha o co nejpodrobnější vysvětlení.
+
+Zkoušející často dokážou vytvořit nejcennější analýzu tím, že se podívají na to, kdy se něco stalo, a vytvářejí časovou osu, která vypráví souvislý příběh \cite{carroll2008computer}. U káždého souboru nebo informace je snaha o zasazení na osu tedy o zjištění, kdy byla vytvořena, zpřístupněna, změněna, přijata, odeslána, zobrazena, odstraněna a spuštěna. 
+
+Během tohoto postupu by měly být dodržovány vhodné metodiky a standardy (popsané v následující části)\cite{for_sez}. Vyšetřovatel by měl prozkoumat získanou kopii nebo obraz média, nikdy ne originálního média. Na rozdíl od fáze zabavení a identifikace vyžaduje fáze analýzy odborníky. Technici musí mít řádné znalosti a musí být řádně vyškoleni. 
+
+
+\uv{\textit{K vyhledávání konkrétních důkazů se používají dva druhy analýz. První je analýza fyzická, která má za úkol najít například nějaký řetězec z obsahu disku a to v rámci všech sektorů disku, který berete jako celek. Logická analýza spočívá v analýze jednotlivých souborů.  Mezi Logickou patří například soubory v souborovém systému.}}\cite{for_root} Podle toho se tato analýza se bude lišit pro různé souborové systémy (Windows, Linux).
+
 \subsection{Vykazování výsledků}
-Vytvoření závěrečné zprávy
-
-
+Na závěr je nutné vytvořit zprávu s výsledky. Ve zprávě musí být popsáný všechny kroky provedené během šetření. Obsahuje zprávy o předchozích krocích a především získaní dat, jejich ověření a analýzu. Je nutné uvést všechny nástroje a hardwarové prvky. Celý postup musí být opakovatelný nezávislou osobou a také musí být ověřitelná nezaujatost, nestrannost a nezávislost. Výsledky musí jasně prezentovatelné i osobám mimo daný obor.
 
 \section{Typy forenzní analýzy}
 Dále můžeme forenzní analýzu rozdělit na nasledující typy tak jak je uvedeno v \cite{for_types}. V jiné literatuře je možné narazit i na jiné rozdělení, které je bývají většinou stručnější.
@@ -236,11 +260,19 @@ Belkasoft Evidence Center 2019 umožňuje forenznímu expertovi snadno prohledá
 
 
 
-
-
   
 \begin{conclusion}
- Forenzní analýza v IT
+Co jsem jak pospal
+
+Forenzní analýza digitálních dat spojuje velmi široký okruh témat. K provádění datové forenzní anaýzy je nutné mít znalosti ze sítového provozu, hardwaru a jeho chovaní na okolní podněty. Dále také velké škály programů. Bez daných znalostí nejsme schopni provést analýzu tak aby byl výsledek věrohodný a použitelný. V nejhorším případě by to vedlo ke zničení důkazů. 
+
+V mé práci jsem popsal vědní obo digitální forenzní analýzy. Tento obor je velice obsháhlý a je možné ho dělit na plno částí, například podle popsaných kapitol. O každé kapitole by mohla být napsána přinejmenších stejná práce. Pro více informací doporučuji citovanou literaturu.
+
+
+
+
+
+
 \end{conclusion}
 
 \bibliographystyle{csn690}

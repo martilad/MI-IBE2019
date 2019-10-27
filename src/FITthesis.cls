@@ -316,11 +316,12 @@
 	%\imprintpage
 	\abstractpage
 	%\cleardoublepage
-	%\tableofcontents*
-	%\cleardoublepage
+	\tableofcontents*
+	
+	\clearpage
 	%\listoffigures*
 	%\cleardoublepage
-	\listoftablescond
+	%\listoftablescond
 	\pagestyle{ruled}
 	\mainmatter
 }

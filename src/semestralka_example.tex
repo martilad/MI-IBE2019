@@ -39,7 +39,15 @@
 
 \abstractCS
 {
-  Forenzní analýza v IT
+Tato práce se zabývá problematikou digitální forenzní analýzy webových prohlížečů. V prvních
+kapitolách je popsán proces forenzní analýzy, používané metodologie a postupy a také problematika
+analýz webových prohlížečů. Zejména pak typy informací, které prohlížeč ukládá a problémy s
+bezpečností. Na základě teoretických základů byl pak vytvořen teoretický a praktický postup získání
+dat z webového prohlížeče Mozilla Firefox. Praktický postup využívá běžné linuxové nástroje a
+vlastní aplikaci, která byla vytvořena v rámci této práce. Na základě navrženého praktického postupu
+byla provedena forenzní analýza prohlížeče.
+
+
 }
 
 \abstractEN
@@ -52,11 +60,11 @@
 
 \keywordsCS
 {
-  Forenzní analýza v IT
+  Forenzní analýza v IT, digitaní forenzní analýza , informační bezpečnost
 }
 \keywordsEN
 {
-  Forenzní analýza v IT
+  Forensic analysis in IT, digital forensic analysis, information security
 }
 
 \begin{document}
@@ -67,19 +75,168 @@
 \begin{introduction}
   \label{sec:uvod}
 
-  
+V dnešní době je s digitálními zařízenímy spojena většina každodenních činností, ať už jsou to počítače, mobilní telefony, ale v dnešní době i hodinky nebo žárovky, které například ovládáme přes svůj mobilní telefon, a také další domácí spotřebiče. Můžeme například platit behotovostně ať už pomocí karty nebo i chytrých hodinek. Všechny tyto digitální technologie jsou v našem životě zastoupeny čím dál větší měrou a nahrazují staré postupy. 
+
+Všechna tyto digitální zařízení se však mohou stát terčem útoku. Útoky na digitální systémy se stavájí každodenní rutinou a je tedy nutné umět takové útoky odhalit, bránit se proti nim. Počet útoků na tyto systémy narůstá každým rokem. Nemusí se přímo jednat jen o útoky proti počítačům, ale například i zneužití digitální techniky k páchání trestného činu. Například počítače v bytě, kde proběhla vražda.
+
+Pokud se nějaký fyzická trestný čin, bude místo činu zkoumáno oprávněnými osobami. Cílem ohledání místa činu je rekonstrukce události a nalezení viníka. Důležitou součástí procesu je sběr důkazů, které představují třeba otisky prstů. Jinak tomu není ani v případě digitálních systému, kde je nutné zajistit důkazy například data po škodlivém softwaru. Tyto data jsou velice nestálá a je nutné s nimi náležitě pracovat.
+
+Vědou, která se tímto zabývá je forenzní analýza digitálních dat (angl. digital forensics). V této práci tuto oblast popíši a pokusíme se příblížit některé metody, nástroje, postupy, ale také stručnou histrorii. Vágně řečené jde v této oblasti o analýzu dat s cílem zjistit co, kdy, kde a jak se stalo.
+ 
 
 \end{introduction}
 
-\chapter{Typy}
+\chapter{Forenzní analýza}
+Forenzní analýza je pojem pro analýzu a vyšetřování, které se prování za účelem zdokumentování události (nejčastěji v oblasti bezpečnosti). Dále zjištění jejich důvodů, průběhu a hledání viníků a objektivních důkazů, které by případné viníky mohli usvědčit (u soudu)\cite{for_uvod}.
 
-       \cite{cisco_intro}
+V knize \cite{RECHAndBook} je digitální forenzní analýza definována jako soubor technik a nástrojů používaných pro hledání důkazů na počítači, které mohou být použity v uživatelův neprospěch. Důkazy nemusíjí přímo souviset s počítačovou kriminalitou. Digitalní forenzní analýzu lze aplikovat napčíklad pří vyšetřovní trestné činnosti, vydírání, krádeží, podvodů a padělání.
 
-\chapter{Bezpečnost}
+Forenzní analýza v informačních technologiích neboli také forenzní analýza digitální dat (pokud bude dále v textu zmíněna forenzní analýza půjde už pouze jen konkrétně o forenzní analýzu digitální dat) se zabývá výše zmíněnými problémy s využitím digitální dat, jak je popsáno v \cite{for_root}. Oproti definici výše se zde zmiňují téměř libovolná digitální data. Tato digitální data jsou pak většinou uložena na disku v počítači, ale obecně to může být libovolné digitální médium.
 
-Jak už bylo výše uvedeno, některé VPN provoz šifrují, jiné naopak počítají s tím, že se 
+Forenzní analýza se využívá napříč velkým množstvím oborů, například v kriminalistice, interním vyšetřovaní ve firmě, ale může být využita například i při obnově dat nebo občanskoprávním řízení.
 
-  \section{Aktuální hrozby}
+Forenzní věda byla vytvořena za účelem řešení specifických potřeb donucovacích orgánů, aby se co nejlépe využila tato nová forma elektronických důkazů, které mohou dopomoci objasntit a vyřešit daný případ. Postupy v digitalní forenzní analýze jsou řízeny směrnice a postupy, které je nutné dodržovat.
+
+Jak se píše v \cite{for_uvod}, počítačová forenzní věda je ve svém jádru odlišná od většiny tradičních forenzních disciplín. Počítačový materiál, který je zkoumán, a techniky, které má provádějící technik k dispozici, jsou většinou produkty soukromého sektoru. Kromě toho, na rozdíl od tradičních forenzních analýz, je běžně vyžadováno provádění počítačových zkoušek prakticky na jakémkoli fyzickém místě, nejen v kontrolovaném laboratorním prostředí. Obecně není datová forenzní analýza prostorově náročná, ale může být náchylná na drobné nepřesnosti, kterým je nutné se vyvarovat, aby výsledky mohli být použitelné. Digitální forenzí analýza většinou nevýtváří přímé závěry, ale poskytuje příme informace, kterými bývají závěry podloženy.
+
+
+\section{Kroky digitální forenzní analýzy}
+Mezi hlavní kroky forenzní analýzi podle \cite{carroll2008computer} tedy můžeme považovat kroky: zabavení, získávání, validace a identifikace, analýza a vykazování výsledků, které potom podrobněji popíši v nasledujících sekcích.
+
+\subsection{Zabavení}
+kroky k získání přístupu k (zabavení) zdrojům tam, kde jsou požadovaná data\cite{for_sez}
+usiluje o zajištění uchování důkazů
+\subsection{Získávání}
+zobrazení a duplikace dat uložených v elektronickém formátu
+\subsection{Validace a identifikace}
+jak jsou data validní a jestli nejsou podvržená například, identifikace důležitých dat
+\subsection{Analýza}
+Analýza dat
+\subsection{Vykazování výsledků}
+Vytvoření závěrečné zprávy
+
+
+
+\section{Typy forenzní analýzy}
+Dále můžeme forenzní analýzu rozdělit na nasledující typy tak jak je uvedeno v \cite{for_types}. V jiné literatuře je možné narazit i na jiné rozdělení, které je bývají většinou stručnější.
+
+\subsection{Computer Forensics}
+the identification, preservation, collection, analysis and reporting on evidence found on computers, laptops and storage media in support of investigations and legal proceedings.
+\subsection{Network Forensics}
+the monitoring, capture, storing and analysis of network activities or events in order to discover the source of security attacks, intrusions or other problem incidents, i.e. worms, virus or malware attacks, abnormal network traffic and security breaches.
+\subsection{Mobile Devices Forensics}
+the recovery of electronic evidence from mobile phones, smartphones, SIM cards, PDAs, GPS devices, tablets and game consoles.
+\subsection{Digital Image Forensics }
+the extraction and analysis of digitally acquired photographic images to validate their authenticity by recovering the metadata of the image file to ascertain its history.
+\subsection{Digital Video/Audio Forensics}
+the collection, analysis and evaluation of sound and video recordings. The science is the establishment of authenticity as to whether a recording is original and whether it has been tampered with, either maliciously or accidentally.
+\subsection{Memory forensics}
+the recovery of evidence from the RAM of a running computer, also called live acquisition.
+
+\section{Předmět forenzní analýzy}
+
+Předmětem forenzní analýzyt jsou
+Nejčastěji jsou tato data nacházena na záznamových mediích v podobě
+souborů (platná data), smazaných souborů (neplatná data), v podobě fragmentů
+dat (částečně přepsané soubory), dále pak v podobě dat dočasně uložených
+v operační paměti nebo v podobě záznamů běžících služeb (logů).
+Aby analýza digitálních dat mohla být považována za forenzní, musí splňovat
+obecné podmínky (zásady) forenzního zkoumání. (viz. kapitola Zásady digitální
+forenzní analýzy)
+
+\section{Techniky}
+
+\section{Použití jako důkaz}
+
+\section{Omezení a rizika}
+
+
+Tato kapitola je zaměřena na popis možných ohrožení a rizik v celém procesu práce
+s digitálními stopami. Vznik rizik a ohrožení nelze při práci s digitálními stopami nikdy
+vyloučit. I při důsledném dodržení všech existujících bezpečnostních pravidel, zásad
+a doporučených postupů, mohou nastat situace, při kterých vzniknou rizika, nebo ohrožení
+digitálních stop. Tyto rizika mohou být způsobeny technikou, nebo použitou technologií,
+například při závadách, poruchách, nebo při selhání zajištěných zařízení, které obsahují
+digitální stopy, nebo technologických datových médií, na kterých jsou tyto stopy uloženy.
+Za dalšími riziky a ohroženími stojí většinou selhání lidského faktoru, nedodržení pravidel
+pro bezpečnou manipulaci s digitálními stopami, nebo nedodržení zásad pro jejich
+skladování. U rizik způsobených selháním lidského faktoru se může jednat o rizika
+způsobená úmyslně, neúmyslně, nebo způsobená nedbalostí. V následujícím textu budou
+podrobněji popsána nejdůležitější rizika a ohrožení v jednotlivých etapách práce
+s digitálními stopami a zároveň také navrhovaná protiopatření, kterými se uvedená rizika
+zmírní, nebo úplně eliminují.
+\cite{for_baka}
+
+V průběhu digitální forenzní analýzy nelze vyloučit rizika související s digitálními stopami.
+Může se jednat o problémy s technikou, selhání zařízení obsahující digitální stoupu. Ale
+nejčastěji se bude jednat o riziko lidského faktoru, tedy nedodržování předepsaných pravidel
+a postupů. Toto ohrožení může být způsobeno neúmyslně, ale taky s úmyslem zmanipulovat
+vyšetřování. Ladislav Vyskočil ve své práci uvádí především tato rizika:
+• Nezajištění všech digitálních stop
+• Neodborné zajištění digitálních stop
+• Nesprávné zabalení a ověření digitálních stop
+• Nesprávná, nebo neúplná dokumentace
+• Znehodnocení zajištěných stop
+• Úmyslné zničení dat
+• Nemožnost rozšifrovat data
+• a další…
+Většině rizik spojených s digitální stopou lze předcházet dodržováním postupů a doporučení
+a obecných bezpečnostních pravidel.
+
+\section{Právní aspekty}
+
+
+\chapter{Nástroje digitální forenzní analýzy}
+
+Ve forenzní analýze je používáno mnoho nástrojů, který proces usnadňují a pomáhají předejít problémům. Tyto nástroje můžeme rozdělit mezi hardwarové (vetšinou fyziká krabička) nebo sofwarové (program).
+
+
+Tool Requirements \cite{for_need}
+ Usability: Present data a layer of abstraction that is useful
+to an investigator (Complexity Problem)
+Comprehensive: Present all data to investigator so that both
+Inculpatory and Exculpatory Evidence can be identified
+ Accuracy: Tool output must be able to be verified and a
+margin of error must be given (Error Problem)
+ Deterministic: A tool must produce the same output when
+given the same rule set and input data.
+ Verifiable: To ensure accuracy, one must be able to verify
+the output by having access to the layer inputs and outputs.
+ Verification can be done by hand or a second tool set.
+
+Tool Recommendations
+ Read-Only: Because digital data can be easily duplicated,
+this is not a requirement. Although, to verify the results a
+copy of the input will be required at a later date.
+
+
+\section{Hardware}
+duprikatory
+write blokery
+
+
+\section{Software}
+Forensic Toolkit od AccessData je uznáván jako světový standard pro forenzní analýzu. Tato platforma představuje špičku v oboru analýzy digitálních dat, dešifrování, lámání hesel, a to všechno v intuitivním a přizpůsobitelném rozhraní. FTK používá indexování a předvyhledávání – filtrování výsledků je tedy rychlejší než u jiných produktů. Databázová architektura nástroje umožňuje pracovat s velkými objemy dat a poskytuje neporovnatelně vyšší stabilitu a rychlost zpracování dat. FTK umožňuje distribuovaný processing dat a obsahuje web-based case management a možnost společné analýzy.
+
+\cite{for_soft}
+
+Forensic Toolkit FTK 7 - AccessData
+EnCase Forensic 8 - Guidance Software/OpenText
+Belkasoft Evidence Center 2019 - Belkasoft
+      
+Belkasoft Evidence Center 2019 umožňuje forenznímu expertovi snadno prohledávat, analyzovat, uchovávat a sdílet digitální důkazy zajištěné na paměťových médiích nebo v operační paměti počítače. Nástroj dokáže zajistit důkazy z mnoha zdrojů, jako jsou pevné disky, obrzay paměti, zálohy iOS, Androidu či BlackBerry, nebo obrazy z UFED, JTAG nebo chip-off analýzy. Evidence Center pomáhá rychle identifikovat a analyzovat informace ze sociálních sítí, instant messagingu, z historie internetových prohlížečů, schránek populárních emailových klientů, peer-to-peer klientů, chatů z multi-player her, ale také z dokumentů, obrazových souborů, videa, kryptovaných souborů, záloh mobilních telefonů a ze systémových souborů a registrů.
+
+
+
+
+\chapter{Anti-forenzní analýza}
+
+
+
+
+
+
+
 
   
 \begin{conclusion}

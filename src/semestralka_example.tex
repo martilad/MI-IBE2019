@@ -170,6 +170,8 @@ forenzní analýzy)
 
 \section{Techniky}
 
+wikipedie a neco
+
 \section{Použití jako důkaz}
 
 \section{Omezení a rizika}
@@ -214,24 +216,36 @@ a obecných bezpečnostních pravidel.
 
 Ve forenzní analýze je používáno mnoho nástrojů, který proces usnadňují a pomáhají předejít problémům. Tyto nástroje můžeme rozdělit mezi hardwarové (vetšinou fyziká krabička) nebo sofwarové (program).
 
+Dále tu na každý takovýto nástroj máme podle \cite{for_need} následující požadavky:
 
-Tool Requirements \cite{for_need}
+\begin{itemize}
+\item Usability - 
+\item Comprehensive - 
+\item Accuracy - 
+\item Deterministic - 
+\item Verifiable - 
+\end{itemize}
+
+Další doporučení pro nástroje je read-only (původní data vůbec nemodifikuju. Data mohou být snadno zkopírovatelná, sice toto není nutnost, ale pro budoucí verifikaci výsledků je to žádoucí a kopie dat bude vyžadována. 
+
+
  Usability: Present data a layer of abstraction that is useful
 to an investigator (Complexity Problem)
+
 Comprehensive: Present all data to investigator so that both
 Inculpatory and Exculpatory Evidence can be identified
+
  Accuracy: Tool output must be able to be verified and a
 margin of error must be given (Error Problem)
+
  Deterministic: A tool must produce the same output when
 given the same rule set and input data.
+
  Verifiable: To ensure accuracy, one must be able to verify
 the output by having access to the layer inputs and outputs.
+
  Verification can be done by hand or a second tool set.
 
-Tool Recommendations
- Read-Only: Because digital data can be easily duplicated,
-this is not a requirement. Although, to verify the results a
-copy of the input will be required at a later date.
 
 
 \section{Hardware}
@@ -240,27 +254,30 @@ write blokery
 
 
 \section{Software}
-Forensic Toolkit od AccessData je uznáván jako světový standard pro forenzní analýzu. Tato platforma představuje špičku v oboru analýzy digitálních dat, dešifrování, lámání hesel, a to všechno v intuitivním a přizpůsobitelném rozhraní. FTK používá indexování a předvyhledávání – filtrování výsledků je tedy rychlejší než u jiných produktů. Databázová architektura nástroje umožňuje pracovat s velkými objemy dat a poskytuje neporovnatelně vyšší stabilitu a rychlost zpracování dat. FTK umožňuje distribuovaný processing dat a obsahuje web-based case management a možnost společné analýzy.
 
-\cite{for_soft}
+Téměř veškeré postupu forenzní analýzy jsou stadardizovány a pro provádění forenzní analýzy existuje mnoho programů, které jsou vytvořeny podle těchto standardů. Nástroje pomáhají se vyvarovat chybám, které by mohli výsledky snehodnotit tak, že by výsledky forenzní analýzy nebyly použitelné u soudu. Informace o existujícím softwaru jsem čerpal z \cite{for_soft}.
 
-Forensic Toolkit FTK 7 - AccessData
-EnCase Forensic 8 - Guidance Software/OpenText
-Belkasoft Evidence Center 2019 - Belkasoft
-      
-Belkasoft Evidence Center 2019 umožňuje forenznímu expertovi snadno prohledávat, analyzovat, uchovávat a sdílet digitální důkazy zajištěné na paměťových médiích nebo v operační paměti počítače. Nástroj dokáže zajistit důkazy z mnoha zdrojů, jako jsou pevné disky, obrzay paměti, zálohy iOS, Androidu či BlackBerry, nebo obrazy z UFED, JTAG nebo chip-off analýzy. Evidence Center pomáhá rychle identifikovat a analyzovat informace ze sociálních sítí, instant messagingu, z historie internetových prohlížečů, schránek populárních emailových klientů, peer-to-peer klientů, chatů z multi-player her, ale také z dokumentů, obrazových souborů, videa, kryptovaných souborů, záloh mobilních telefonů a ze systémových souborů a registrů.
+První nástroj je od firmy AccessData. Forensic Toolkit FTK 7 je uznáván jako světový standard pro forenzní analýzu. Tato platforma představuje špičku v oboru analýzy digitálních dat, dešifrování, lámání hesel, a to všechno v intuitivním a přizpůsobitelném rozhraní. Nástroj také umožnuje pracovat s velkými objemy dat, díky distribuované databázové struktuře.
 
+Dálším nástrojem je například Belkasoft Evidence Center 2019 od firmy Belkasoft. Program umožňuje forenznímu expertovi snadno prohledávat, analyzovat, uchovávat a sdílet digitální důkazy zajištěné na paměťových médiích nebo v operační paměti počítače. Nástroj dokáže zajistit důkazy z mnoha zdrojů, jako jsou pevné disky, obrzay paměti, zálohy iOS, Androidu či BlackBerry, nebo obrazy z UFED, JTAG nebo chip-off analýzy \cite{for_soft}.
 
-
+Dalším nástrojem je třeba EnCase Forensic 8 od Guidance Software/OpenText. Nástroje nejsou levné, ale když vezmeme v úvahu, že pracujeme s daty, která tuto hodnotu mnohdy i převýší, tak se vyplatí investice do nástroje, který pomůže předejít chybám a usnadní digitální forenzní analýzu.
 
 \chapter{Anti-forenzní analýza}
 
+Anti-forenzní analýza je soubor technik používaných jako protiopatření k digitální forenzní analýze. V práci jsem se rozhodl toto zmínit, protože znalost těchto technik je určitě duležitá i pro forenzní techniky a naopak. Podle \cite{anti-prezi} jde rozdělit do následujících kategorií.
+
+\begin{itemize}
+
+\item[Schovávání dat] - Nemusí se jednat vždy přímo o snahu, aby data nebyla viděť nebo nebyla na místě kde jsou hledána. Typicky skryté oddíly disku, chybné sektory, skryté složky. Další možností, kdy data jsou viditelná ale nečitelná je šifrování. Zašifrování dat dostatečně silným klíčem je téměř neprolomitelné. Dálší možností může být napřiklad steganografie. Jedná se o ukrytí zprávy. Například využítím nějakého kanálu v obrázku.
+\item[Vymazání artefaktů] - Zde je jdná například o důkladné smazání prázdného disku. Klasické odstranění souboru nevymaže data z disku fyzicky. 
+\item[Nástrahy a zmatení] - Kde jsou data uložena. Trojské koně, zombii účty nebo například umyslná záměna inforací. 
+\item[Útoky proti nástrojům pro forenzní analýzu] - Ja je zmíněno v \ref{anti-prezi}. Toto je relativně nová možnost. Je to zapříčeněno standardizací forenzní analýzy, kdy je znám přesný postup, který je prováděn softwarem. Závislost na forenzním softwaru velmi ohrožuje zkoumaná data, forenzní software může být napaden a ovlivněn tak aby stopu zahladil napřílad. 
+
+\end{itemize}
 
 
 
-
-
-  
 \begin{conclusion}
 Co jsem jak pospal
 

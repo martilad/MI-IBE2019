@@ -166,18 +166,26 @@ Získání a rekontrukce dat získaných z operační paměti RAM. Vrstva, kter�
 
 \section{Předmět forenzní analýzy}
 
-Předmětem forenzní analýzyt jsou
-Nejčastěji jsou tato data nacházena na záznamových mediích v podobě
-souborů (platná data), smazaných souborů (neplatná data), v podobě fragmentů
-dat (částečně přepsané soubory), dále pak v podobě dat dočasně uložených
-v operační paměti nebo v podobě záznamů běžících služeb (logů).
-Aby analýza digitálních dat mohla být považována za forenzní, musí splňovat
-obecné podmínky (zásady) forenzního zkoumání. (viz. kapitola Zásady digitální
-forenzní analýzy)
+Předmětem forenzní analýzy jsou nejčastěji data, která se nachazení na mediích v podobě souborů, která můžou být označovaná jako platná data. Dále data nelatná, které můžou představovat smazané soubory, fragmenty dat (smazané soubory, které byly částěční přepsány). Dále to pak můžou představovat data v opečační pamětí, která jsou nestálá a při vypnutí počítače tyto data zanikají. Data představují kontex programů, bežící kód a proměné v proměných. Záznamy běžících aplikací v podobě logů. 
+Aby analýza digitálních dat byla forenzní analýzou, musí splňovat body udedené v kapitole \ref{body} a také nesmí porušit  žádné zákony.
 
 \section{Techniky}
 
-Během forenzní analýzy je možné využít některé techniky. Zde \cite{for_w} jsou ty nejdůležitější podle 
+Během forenzní analýzy je možné využít některé techniky. Zde jsou ty nejdůležitější podle \cite{for_w}:
+\begin{itemize}
+\item \textbf{Cross-drive analýza} -Metoda je uvedená v publikaci \cite{garfinkel2006forensic}. Cross-drive analýza je forenzní technika, která se snaží vyhledávat informace najednou na více mediích. Tato metoda je velice nová a může přispět k odhalení nových informací, než při analýze každého disku zvlášť.
+
+\item \textbf{Analýza za běhu} - Technika analýzy běžícího systému pomocí nástrojů systémových administrátorů. Tato technika je důležitá především k získaní dat z operační paměti, dále také pokud je cílový systém šífrován, může být využit k získaní šifrovacích klíčů, aby disky a data byla použítelná i po vypnutí systému. Může být také obraz disku vytvořen ještě před vypnutím systému.
+
+\item \textbf{Smazané soubory} - Nejběžnější technikou používanou v počítačové forenzní analýze je obnova smazaných dat. Moderní software mají svoje vlastní nástroje pro obnovu smazaných dat. Data v operačních systémech nejsou při odstarnění fyzicky odstraněna, protože tento proces není fyzicky možný. Data je možné pouze přepisovat a přepsání dat náhodnými. Tento postup je ale časově náročný proto není využívaný. Vyšetřovatelům toto umožňuje rekonstruovat data z fyzických diskových sektorů. Pro rekonstrukci smazaných dat uvnitř diskového obrazu se používá tzv. „File carving“, který hledá hlavičky známých souborů \cite{for_w}. 
+
+\item \textbf{Stochastická forenzní analýza} - Je metoda využívající stochastické vlastnosti v operačním systému. Využití pravděpodobnosti a zákonů velkých čísel. Tato metoda se nejčastěji využívá pro vyšetřování krádeže dat.
+
+\item \textbf{Steganografie} - Jedna z technik využívaná pro ukrývání dat je za pomoci steganografie. S její pomocí se dají data schovat v jiném souboru. SOubor může představovat libovolný formát. Můžem takto ukrýt například důležitou zprávu nebo šifry. Počítačoví forenzní profesionálové mohou odhalit pozměnění originálního obrázku pomocí porovnání jeho haše s hašem originálního obrázku, který ale nemusí být k dispozici. Uložená data můžou být uložena v obrázku, který byl náhodně generován. Vizuélně mohou být obrázky stejné, ale hash se může lišit, protože hashovací funkce by se měla chovat jako náhodné orákulum, které přidělí hash nějaké libovolně dlouhé sequenci. Tedy při změně jednoho bitu se hash zmení radíkálně na libovolnou jnou hodnotu.
+
+
+\end{itemize}
+
 
 
 \section{Omezení a rizika}
@@ -218,8 +226,8 @@ a obecných bezpečnostních pravidel.
 \section{Právní aspekty}
 \cite{svetlik2010digitalni}
 
-\chapter{Nástroje digitální forenzní analýzy}
-
+\chapter{Nástroje digitální forenzní analýzy} 
+\label{body}
 Ve forenzní analýze je používáno mnoho nástrojů, který proces usnadňují a pomáhají předejít problémům. Tyto nástroje můžeme rozdělit mezi hardwarové (vetšinou fyziká krabička) nebo sofwarové (program).
 
 Dále tu na každý takovýto nástroj máme podle \cite{for_need} následující požadavky:

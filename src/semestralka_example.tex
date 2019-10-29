@@ -91,7 +91,7 @@ Forenzní analýza je pojem pro analýzu a vyšetřování, které se prování 
 
 V knize \cite{RECHAndBook} je digitální forenzní analýza definována jako soubor technik a nástrojů používaných pro hledání důkazů na počítači, které mohou být použity v uživatelův neprospěch. Důkazy nemusíjí přímo souviset s počítačovou kriminalitou. Digitalní forenzní analýzu lze aplikovat napčíklad pří vyšetřovní trestné činnosti, vydírání, krádeží, podvodů a padělání.
 
-Forenzní analýza v informačních technologiích neboli také forenzní analýza digitální dat (pokud bude dále v textu zmíněna forenzní analýza půjde už pouze jen konkrétně o forenzní analýzu digitální dat) se zabývá výše zmíněnými problémy s využitím digitální dat, jak je popsáno v \cite{for_root}. Oproti definici výše se zde zmiňují téměř libovolná digitální data. Tato digitální data jsou pak většinou uložena na disku v počítači, ale obecně to může být libovolné digitální médium.
+Forenzní analýza v informačních technologiích neboli také forenzní analýza digitální dat (pokud bude dále v textu zmíněna forenzní analýza půjde už pouze jen konkrétně o forenzní analýzu digitální dat) se zabývá výše zmíněnými problémy s využitím digitální dat, jak je popsáno v \cite{for_root}. Oproti definici výše se zde zmiňují téměř libovolná digitální data a není omezena pouze na počítač. Tato digitální data jsou pak většinou uložena na disku v počítači, ale obecně to může být libovolné digitální médium.
 
 Forenzní analýza se využívá napříč velkým množstvím oborů, například v kriminalistice, interním vyšetřovaní ve firmě, ale může být využita například i při obnově dat nebo občanskoprávním řízení.
 
@@ -105,6 +105,8 @@ Mezi hlavní kroky forenzní analýzi podle \cite{carroll2008computer} tedy mů�
 
 \subsection{Zabavení}
 Krok zabavení zahrnuje označení prvků, které budou použity v pozdějších procesech. Jsou pořizovány fotografie scény a poznámky. Například počítač je nutné zapečetit, aby nemohlo být napadeno to, že byl obsah modifikován. V \cite{for_sez} zmiňuje zajímavou otázku, na kterou je třeba v tuto fázi odpovědět: Vytáhnout zástrčku v síti nebo ne. Ponechání systému online během pokračování může útočníka upozornit, což mu umožní vymazat stopy útoku a zničit důkazy. Útočník může také nechat přepínač, který zničí důkazy, jakmile se systém přepne do režimu offline. Za takových okolností může být nutné nebo vhodné shromáždit důkazy ze systému, když je spuštěn. Pro přijetí jakéhokoliv postupu je nutné kroky vysvětlit. Cílem fáze je zajištění a uchování důkazů.
+
+Ja se píše v \cite{palmer2002forensic}, není důležité, kde se přesně nachází, ale důležité jsou důkazy, které lze získat. Počítač může být součástí nějakého prostředí, které zahrnuje i zvdálené brány firewall, inteligentní smerovače a rozbočovače, poskytovatele internetu, bezdradrátová zařízení, atd\dots Je nutné shromáždit všechna tyto data a hledat mezi nimi korelace. I tato data mohou být pro hledání důkazů klíčová.
 
 \subsection{Získávání}
 Po první fázi je přistopeno k získávání dat. Součástí této fáze je většinou i fáze duplikace, kdy je kopie dat bezpečně uložena. Data musí být získána beze změny nebo poškození zdroje, který má být analyzován později. Nezákonné zabavení nebo nevhodný postup může ovlivnit platnosti důkazů u soudu. Z tohoto důvodu by metody získávání důkazů měly být forenzně spolehlivé a ověřitelné. Získavání může být fyzická nebo logická. Při fyzickém získávání je bitový obraz snímán z fyzického paměťového média, zatímco v logickém získávání je řídký nebo logický obraz zachycen z paměťového média. V obou případech je třeba použít writeblockery, aby se zabránilo úpravě důkazů. Podle \cite{for_sez} se vždy doporučuje zahájit snímání od nejmenších po nejmenší data. Pořádí důležitosti je pak: 
@@ -144,18 +146,23 @@ Na závěr je nutné vytvořit zprávu s výsledky. Ve zprávě musí být pops�
 \section{Typy forenzní analýzy}
 Dále můžeme forenzní analýzu rozdělit na nasledující typy tak jak je uvedeno v \cite{for_types}. V jiné literatuře je možné narazit i na jiné rozdělení, které je bývají většinou stručnější.
 
-\subsection{Computer Forensics}
-the identification, preservation, collection, analysis and reporting on evidence found on computers, laptops and storage media in support of investigations and legal proceedings.
-\subsection{Network Forensics}
-the monitoring, capture, storing and analysis of network activities or events in order to discover the source of security attacks, intrusions or other problem incidents, i.e. worms, virus or malware attacks, abnormal network traffic and security breaches.
-\subsection{Mobile Devices Forensics}
-the recovery of electronic evidence from mobile phones, smartphones, SIM cards, PDAs, GPS devices, tablets and game consoles.
-\subsection{Digital Image Forensics }
-the extraction and analysis of digitally acquired photographic images to validate their authenticity by recovering the metadata of the image file to ascertain its history.
-\subsection{Digital Video/Audio Forensics}
-the collection, analysis and evaluation of sound and video recordings. The science is the establishment of authenticity as to whether a recording is original and whether it has been tampered with, either maliciously or accidentally.
-\subsection{Memory forensics}
-the recovery of evidence from the RAM of a running computer, also called live acquisition.
+\subsection{Počítačová forenzní analýza}
+Identifikace, uchování, sběr, analýza a podávání zpráv o důkazech zjištěných na počítačích, notebookech a úložných médiích na podporu vyšetřování a soudních řízení.
+
+\subsection{Sítová forenzní analýzas}
+Monitoring, zachytávání a ukládání provozu na síti. Může sloužit k odvrácení útoků. Sledování abnormálního provozu na síti je jeden z prvních ukazatelů na problém. Analýza této vrstvy zahrnuje analýzu sítových paketů a jednotlivýh sítových protokolů\cite{carrier2003defining}.
+
+\subsection{Forenzní analýza  mobilních telefonů}
+Získávání elektronických důkazů z mobilních telefonů, smartphonů, SIM karet, PDA, zařízení GPS, tabletů a herních konzol.
+
+\subsection{Forenzní analýza obrázků}
+Extrakce a analýza digitálně pořízených fotografických obrazů za účelem ověření jejich pravosti obnovením metadat obrazového souboru s cílem zjistit jeho historii \cite{for_types}.
+
+\subsection{Digitální analýza videa/audia}
+Sběr, analýza a hodnocení zvukových a obrazových záznamů. Věda je zavedením pravosti o tom, zda je záznam originální a zda s ním bylo manipulováno, ať už zlovolně nebo náhodně.
+
+\subsection{Analýza operační paměti}
+Získání a rekontrukce dat získaných z operační paměti RAM. Vrstva, která převádí bajty pamětového média na procesy a systémová data a oblast zahrnuje identifikaci probíhajícího kódu a získaní citlivých dat, která nebyla uložena jinde\cite{carrier2003defining}. 
 
 \section{Předmět forenzní analýzy}
 
@@ -170,12 +177,11 @@ forenzní analýzy)
 
 \section{Techniky}
 
-wikipedie a neco
+Během forenzní analýzy je možné využít některé techniky. Zde \cite{for_w} jsou ty nejdůležitější podle 
 
-\section{Použití jako důkaz}
 
 \section{Omezení a rizika}
-
+\cite{for_wi}
 
 Tato kapitola je zaměřena na popis možných ohrožení a rizik v celém procesu práce
 s digitálními stopami. Vznik rizik a ohrožení nelze při práci s digitálními stopami nikdy
@@ -210,7 +216,7 @@ Většině rizik spojených s digitální stopou lze předcházet dodržováním
 a obecných bezpečnostních pravidel.
 
 \section{Právní aspekty}
-
+\cite{svetlik2010digitalni}
 
 \chapter{Nástroje digitální forenzní analýzy}
 
@@ -219,39 +225,23 @@ Ve forenzní analýze je používáno mnoho nástrojů, který proces usnadňuj�
 Dále tu na každý takovýto nástroj máme podle \cite{for_need} následující požadavky:
 
 \begin{itemize}
-\item Usability - 
-\item Comprehensive - 
-\item Accuracy - 
-\item Deterministic - 
-\item Verifiable - 
+\item \textbf{Použitelnost} - Pro řešení komplexního problému je nutné, aby nástroje poskytovali dostatečnou vrstvu abstrakce. Data na nejnižším formátu je velice těžké analyzovat. Minimálně musí poskytovatabstraktní vrstvy, které jsou uvedeny jako hraniční vrstvy. Zároveň je nutn, aby nástro prezentoval data v jasném a přehledném formatu aby vyšetřovatel mohl data intepretovat správně. \cite{carrier2003defining}
+\item \textbf{Komplexnost} - Musí být schopen zpracovat veškerá data a identifikovat ty důležitá ve všech směrech.
+\item \textbf{Presnost} - Výstup musí být přesný a ověřitelný. Musí poskytovat zpětnou vazbu o míře jistoty.
+\item \textbf{Determiničnost} - Nástroj musí produkovat stejné výsledky pokud jsou poskytnuta stejná data a stejná sada pravidel.
+\item \textbf{Ověřitelnost} - Výstupy musí být vzhledem k datů ověřitelná. Ověření je prováděno ručně nebo může být provedeno pomocí druhého nástroje.
 \end{itemize}
 
 Další doporučení pro nástroje je read-only (původní data vůbec nemodifikuju. Data mohou být snadno zkopírovatelná, sice toto není nutnost, ale pro budoucí verifikaci výsledků je to žádoucí a kopie dat bude vyžadována. 
 
 
- Usability: Present data a layer of abstraction that is useful
-to an investigator (Complexity Problem)
-
-Comprehensive: Present all data to investigator so that both
-Inculpatory and Exculpatory Evidence can be identified
-
- Accuracy: Tool output must be able to be verified and a
-margin of error must be given (Error Problem)
-
- Deterministic: A tool must produce the same output when
-given the same rule set and input data.
-
- Verifiable: To ensure accuracy, one must be able to verify
-the output by having access to the layer inputs and outputs.
-
- Verification can be done by hand or a second tool set.
-
-
-
 \section{Hardware}
-duprikatory
-write blokery
+Pro digitální forenzní analýzu existuje také přímo specializovaný hardware. Jde o fyzické zařízení, které pomáhájí při forenzní analýze a umožnují zabránit ztrátě dat a i znehodnocení takové analýzy. Vybral jsem dva prvky, které mi přišli při forenzní analýze nejdůležitější. Jsou to duplikátory a blokátory zápisu (angl. write blockers).
 
+\subsection{Duplikátory}
+Informace o duplikátorech čerpány z \cite{for_hard}. Duplikátory slouží k vytvoření kompletní kopie pevných disků, paměťových karet nebo flesh disků. Dále se může jednat o duplikátory na nějakém rozhraní například na ethernetu, kdy může být přesně sledován sítový provoz do daného počítače.
+\subsection{Blokátory zápisu}
+Blokátor zápisu je jakýkoliv nástroj, který umožnuje přístup k zařízení pro ukládání dat pouze v řežimu čtení, tak že není ohrožena integrita datového uložiště \cite{for_hard2}. Blokátory fungují tak, že filtrují I/O operace a ty které by měli něco zapsat na médium tak zahazují. Je důležité, aby žádná část disku nebyla změňěna. Tento typ je také součástí programů popsaných dále. Nemusí se tedy jednat pouze o fyzické zařízení, kde je na blokování speciální čip, ale i o součást programu.
 
 \section{Software}
 
@@ -269,10 +259,10 @@ Anti-forenzní analýza je soubor technik používaných jako protiopatření k 
 
 \begin{itemize}
 
-\item[Schovávání dat] - Nemusí se jednat vždy přímo o snahu, aby data nebyla viděť nebo nebyla na místě kde jsou hledána. Typicky skryté oddíly disku, chybné sektory, skryté složky. Další možností, kdy data jsou viditelná ale nečitelná je šifrování. Zašifrování dat dostatečně silným klíčem je téměř neprolomitelné. Dálší možností může být napřiklad steganografie. Jedná se o ukrytí zprávy. Například využítím nějakého kanálu v obrázku.
-\item[Vymazání artefaktů] - Zde je jdná například o důkladné smazání prázdného disku. Klasické odstranění souboru nevymaže data z disku fyzicky. 
-\item[Nástrahy a zmatení] - Kde jsou data uložena. Trojské koně, zombii účty nebo například umyslná záměna inforací. 
-\item[Útoky proti nástrojům pro forenzní analýzu] - Ja je zmíněno v \ref{anti-prezi}. Toto je relativně nová možnost. Je to zapříčeněno standardizací forenzní analýzy, kdy je znám přesný postup, který je prováděn softwarem. Závislost na forenzním softwaru velmi ohrožuje zkoumaná data, forenzní software může být napaden a ovlivněn tak aby stopu zahladil napřílad. 
+\item \textbf{Schovávání dat} - Nemusí se jednat vždy přímo o snahu, aby data nebyla viděť nebo nebyla na místě kde jsou hledána. Typicky skryté oddíly disku, chybné sektory, skryté složky. Další možností, kdy data jsou viditelná ale nečitelná je šifrování. Zašifrování dat dostatečně silným klíčem je téměř neprolomitelné. Dálší možností může být napřiklad steganografie. Jedná se o ukrytí zprávy. Například využítím nějakého kanálu v obrázku.
+\item \textbf{Vymazání artefaktů} - Zde je jdná například o důkladné smazání prázdného disku. Klasické odstranění souboru nevymaže data z disku fyzicky. 
+\item \textbf{Nástrahy a zmatení} - Kde jsou data uložena. Trojské koně, zombii účty nebo například umyslná záměna inforací. 
+\item \textbf{Útoky proti nástrojům pro forenzní analýzu} - Ja je zmíněno v \cite{anti-prezi}. Toto je relativně nová možnost. Je to zapříčeněno standardizací forenzní analýzy, kdy je znám přesný postup, který je prováděn softwarem. Závislost na forenzním softwaru velmi ohrožuje zkoumaná data, forenzní software může být napaden a ovlivněn tak aby stopu zahladil napřílad. 
 
 \end{itemize}
 

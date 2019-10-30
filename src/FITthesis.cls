@@ -290,7 +290,7 @@
 	\else
 		\ClassError{FITthesis}{Czech keywords unspecified}{Specify the keywords in Czech of your thesis using \keywordsCS command.}
 	\fi
-
+   \clearpage
 	%\vfil
 
 	\if@abstractendefined
@@ -304,6 +304,7 @@
 	\else
 		\ClassError{FITthesis}{English keywords unspecified}{Specify the keywords in English of your thesis using \keywordsEN command.}
 	\fi
+	\clearpage
 }
 
 \AfterEndPreamble{

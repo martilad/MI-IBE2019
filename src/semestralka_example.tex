@@ -62,6 +62,7 @@ byla provedena forenzní analýza prohlížeče.
 {
   Forenzní analýza v IT, digitaní forenzní analýza , informační bezpečnost
 }
+
 \keywordsEN
 {
   Forensic analysis in IT, digital forensic analysis, information security
@@ -143,6 +144,10 @@ Během tohoto postupu by měly být dodržovány vhodné metodiky a standardy (p
 \subsection{Vykazování výsledků}
 Na závěr je nutné vytvořit zprávu s výsledky. Ve zprávě musí být popsáný všechny kroky provedené během šetření. Obsahuje zprávy o předchozích krocích a především získaní dat, jejich ověření a analýzu. Je nutné uvést všechny nástroje a hardwarové prvky. Celý postup musí být opakovatelný nezávislou osobou a také musí být ověřitelná nezaujatost, nestrannost a nezávislost. Výsledky musí jasně prezentovatelné i osobám mimo daný obor.
 
+
+
+
+
 \section{Typy forenzní analýzy}
 Dále můžeme forenzní analýzu rozdělit na nasledující typy tak jak je uvedeno v \cite{for_types}. V jiné literatuře je možné narazit i na jiné rozdělení, které je bývají většinou stručnější.
 
@@ -164,10 +169,15 @@ Sběr, analýza a hodnocení zvukových a obrazových záznamů. Věda je zavede
 \subsection{Analýza operační paměti}
 Získání a rekontrukce dat získaných z operační paměti RAM. Vrstva, která převádí bajty pamětového média na procesy a systémová data a oblast zahrnuje identifikaci probíhajícího kódu a získaní citlivých dat, která nebyla uložena jinde\cite{carrier2003defining}. 
 
+
+
+
 \section{Předmět forenzní analýzy}
 
 Předmětem forenzní analýzy jsou nejčastěji data, která se nachazení na mediích v podobě souborů, která můžou být označovaná jako platná data. Dále data nelatná, které můžou představovat smazané soubory, fragmenty dat (smazané soubory, které byly částěční přepsány). Dále to pak můžou představovat data v opečační pamětí, která jsou nestálá a při vypnutí počítače tyto data zanikají. Data představují kontex programů, bežící kód a proměné v proměných. Záznamy běžících aplikací v podobě logů. 
 Aby analýza digitálních dat byla forenzní analýzou, musí splňovat body udedené v kapitole \ref{body} a také nesmí porušit  žádné zákony.
+
+
 
 \section{Techniky}
 
@@ -188,40 +198,26 @@ Během forenzní analýzy je možné využít některé techniky. Zde jsou ty ne
 
 
 
-\section{Omezení a rizika}
-\cite{for_wi}
+\section{Omezení}
 
-Tato kapitola je zaměřena na popis možných ohrožení a rizik v celém procesu práce
-s digitálními stopami. Vznik rizik a ohrožení nelze při práci s digitálními stopami nikdy
-vyloučit. I při důsledném dodržení všech existujících bezpečnostních pravidel, zásad
-a doporučených postupů, mohou nastat situace, při kterých vzniknou rizika, nebo ohrožení
-digitálních stop. Tyto rizika mohou být způsobeny technikou, nebo použitou technologií,
-například při závadách, poruchách, nebo při selhání zajištěných zařízení, které obsahují
-digitální stopy, nebo technologických datových médií, na kterých jsou tyto stopy uloženy.
-Za dalšími riziky a ohroženími stojí většinou selhání lidského faktoru, nedodržení pravidel
-pro bezpečnou manipulaci s digitálními stopami, nebo nedodržení zásad pro jejich
-skladování. U rizik způsobených selháním lidského faktoru se může jednat o rizika
-způsobená úmyslně, neúmyslně, nebo způsobená nedbalostí. V následujícím textu budou
-podrobněji popsána nejdůležitější rizika a ohrožení v jednotlivých etapách práce
-s digitálními stopami a zároveň také navrhovaná protiopatření, kterými se uvedená rizika
-zmírní, nebo úplně eliminují.
-\cite{for_baka}
+Digitalni forenzní analýza se velice často dotýká velmi citlivých dat. Z tohoto faktu zde můžou plynout určitá omezení. Na zkoumání  digitálních medíích se vztahují zákony a předpisy. Takové jsou definovány mezinárodně, ale i vnitrostátně. Nejčastější omezení může být proti monitorování sítě a čtení komunikace jako třetí strana. V zákoně je také přesně předepsáno, co může být předmětem zabavení. \uv{\textit{Právo jednotlivce na soukromí je jednou z oblastí digitální forenzní vědy, která je soudem stále do značné míry nerozhodnuta}}\cite{for_wi}. Například ve Spojených Státech Amrických je zákon na ochranu osobních údajů v elektronických komunikací velice silný a omezuje schopnosti vyšetřovatelů získávat důkazy. Zde je rozlišováno mezí přenášenou a uloženou komunikací. Sledování přenášené komunikace je témeř většinou silný zásah do soukromí. Legislativa je jedním z omezením, se kterým se forenzní technik musí potýkat. Dalším omezením může být například nedostatečný výkon současných počítačů například k prolamování šifer nebo k analýze v reálném čase. 
 
-V průběhu digitální forenzní analýzy nelze vyloučit rizika související s digitálními stopami.
-Může se jednat o problémy s technikou, selhání zařízení obsahující digitální stoupu. Ale
-nejčastěji se bude jednat o riziko lidského faktoru, tedy nedodržování předepsaných pravidel
-a postupů. Toto ohrožení může být způsobeno neúmyslně, ale taky s úmyslem zmanipulovat
-vyšetřování. Ladislav Vyskočil ve své práci uvádí především tato rizika:
-• Nezajištění všech digitálních stop
-• Neodborné zajištění digitálních stop
-• Nesprávné zabalení a ověření digitálních stop
-• Nesprávná, nebo neúplná dokumentace
-• Znehodnocení zajištěných stop
-• Úmyslné zničení dat
-• Nemožnost rozšifrovat data
-• a další…
-Většině rizik spojených s digitální stopou lze předcházet dodržováním postupů a doporučení
-a obecných bezpečnostních pravidel.
+
+\section{Rizika}
+Další částí jsou rizika, které mohou potkat forenzní techniky při práci. Při práci s digitálními daty nelze rizika nikdy vyloučit, ale pokud nějaký problém nastane tak to většinou zkončí nepoužitelnou analýzou. Avšak i při dodržování všech bezpečnostních pravidel není možné úplně vyloučit, je pouze možné tyto rizika snížit na minimum. Problémy můžou být způsobeny vadou techniky, pouruchy zkoumaného zařízení nebo i zvolenou technikou. Může například selhat zkoumaný disk při vytváření bitové kopie. Dálším problémem mohou být rizika, která vzniknou lidskou chybou. Technik například nedodrží přesné postupy a chce si práci usnadnit. Problémy a chyby způsobené lidským faktorem lze například ještě rozdělit na úmyslné, neúmyslné nebo z nedbalosti. V práci \cite{for_baka} jsou uvedena a zmíňena především následůjící rizika. Většině těchto rizik lze však předcházet dodržováním doporučení, předpisů, zákonů a obecných bezpečnostních pravidel:
+
+\begin{itemize}
+\item Nezajištění všech digitálních stop
+\item Neodborné zajištění digitálních stop
+\item Nesprávné zabalení a ověření digitálních stop
+\item Nesprávná, nebo neúplná dokumentace
+\item Znehodnocení zajištěných stop
+\item Úmyslné zničení dat
+\item Nemožnost rozšifrovat data
+
+\end{itemize}
+
+
 
 \section{Právní aspekty}
 \cite{svetlik2010digitalni}

@@ -1,2 +1,2 @@
-# MI-IVS2019
+# MI-IBE2019
 Repository for subject MI-IBE (Information Security) 

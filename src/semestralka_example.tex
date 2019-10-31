@@ -220,7 +220,19 @@ Další částí jsou rizika, které mohou potkat forenzní techniky při práci
 
 
 \section{Právní aspekty}
-\cite{svetlik2010digitalni}
+
+Aby mohla být analýza dat považována za digitální forenzní analýzu a její výsledky použity u soudu jako důkazy, což je cíl digitální forenzní analýzy, můsí splňovat konkrétní vlastnosti. Pokud bude analýza dat splňovat tyto vlastnisti je veliká šánce, že její výsledky budou důležitým důkazem u soudu. Kromě nepodjatosti nejsou tyto vlastnosti ukotveny v zákoně a jedná se pouze o doporučení přejatá ze zahraničí. Podle \cite{svetlik2010digitalni} jsou to následující aspekty:
+
+\begin{itemize}
+
+\item \textbf{Legalita} - Všechny informace (záznamy hovorů, přenos na síti) nebo předměty(notebooky, flesh disk), které jsou využity v digitální forenzní analýze musí být získány legálním způsobem. Získávání dat se musí řídit zákony země, kde je prováděno. Porušním může být například ukradený flesh disk nebo napríklad nelegální nahrávka telefonu. 
+\item \textbf{Integrita} - Musí být jednoznačné, co je s daty prováděno, a že nemohlo nebo nemůže dojít k manipulaci. Podle článku \cite{svetlik2010digitalni} porušením může být například jakýkoliv zápis na zkoumaný disk, protože mohou být přepsány sektory, na který se mohou nacházet data. V publikaci je uveden konkrétní příklad, ale obecně je už témeř poviností k získaný datům přistupovat pomocí blokatorů zápisu, které jsou popsány v kapitole \ref{blokatory}.
+\item \textbf{Opakovatelnost} - Můsí být použitý takový způsob analýzy, aby byly všechny experimenty opakovatelné. K tomuto je možné využít další hardwarové zařízení a to duplikátor, který je popsán v kapitole \ref{duplikatory}. Práce je prováděna na kopii dat a experiment může být pozousez ekvivaletnímy metodami nebo zopakován stejným postupem. Porušením opět může být přiklad nahoře, tedy že byla pozměnena původní data a nelze již experimenty opakovat. Podle \cite{svetlik2010digitalni} může být porušením například i pokud se mají prozkoumat videozáznamy jestli jsou totožné a technik použije monitor vysokého rozlišení a bude oba videozaznamy pouštět a posuzovat. 
+\item \textbf{Nepodjatos} - Nezávislost zkoumaného objektu na subjektu provadějící forenzní analýzu. Tady to může být například pokud technik, který instaloval server poté bude dělat forenzní analýzu na útokem, který byl na server provedený. I když instalace byla na základě smlouvy o dílo a zkoumání utoku se řídí trestním právem. 
+\item \textbf{Dostatečná dokumentace} - Kážkou forenzní analýzu musí doprovázet podrobná dokumentace, ze které jsou jásně všechny tyto body a celý postup lze podle ní zopakovat. Dále v ní musí být specifikovány závěry, které z forenzní analýzy plynou. Z nedostatečné dokumentace může být celá analýza označena za neplatnou a tedy i důkazy, které by jinak mohli obžalovaného usvědčit.
+
+\end{itemize}
+
 
 \chapter{Nástroje digitální forenzní analýzy} 
 \label{body}
@@ -243,8 +255,10 @@ Další doporučení pro nástroje je read-only (původní data vůbec nemodifik
 Pro digitální forenzní analýzu existuje také přímo specializovaný hardware. Jde o fyzické zařízení, které pomáhájí při forenzní analýze a umožnují zabránit ztrátě dat a i znehodnocení takové analýzy. Vybral jsem dva prvky, které mi přišli při forenzní analýze nejdůležitější. Jsou to duplikátory a blokátory zápisu (angl. write blockers).
 
 \subsection{Duplikátory}
+\label{duplikatory}
 Informace o duplikátorech čerpány z \cite{for_hard}. Duplikátory slouží k vytvoření kompletní kopie pevných disků, paměťových karet nebo flesh disků. Dále se může jednat o duplikátory na nějakém rozhraní například na ethernetu, kdy může být přesně sledován sítový provoz do daného počítače.
 \subsection{Blokátory zápisu}
+\label{blokatory}
 Blokátor zápisu je jakýkoliv nástroj, který umožnuje přístup k zařízení pro ukládání dat pouze v řežimu čtení, tak že není ohrožena integrita datového uložiště \cite{for_hard2}. Blokátory fungují tak, že filtrují I/O operace a ty které by měli něco zapsat na médium tak zahazují. Je důležité, aby žádná část disku nebyla změňěna. Tento typ je také součástí programů popsaných dále. Nemusí se tedy jednat pouze o fyzické zařízení, kde je na blokování speciální čip, ale i o součást programu.
 
 \section{Software}

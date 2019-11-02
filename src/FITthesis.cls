@@ -230,26 +230,26 @@
 	\end{titlingpage}
 }
 
-\DeclareRobustCommand{\acknowledgementspage}{
-	\if@acknowledgementsdefined
-		\cleardoublepage
-		\thispagestyle{empty}
+%\DeclareRobustCommand{\acknowledgementspage}{
+%	\if@acknowledgementsdefined
+		%\cleardoublepage
+		%\thispagestyle{empty}
 		
-		~
+	%	~
 		
-		\vfill
+	%	\vfill
 		
-		\if\@lang1\chapterstyletitle{Pod{\v e}kov{\' a}n{\' i}}\else\if\@lang2\chapterstyletitle{Po\v dakovanie}\else\chapterstyletitle{Acknowledgements}\fi\fi\theacknowledgements
-	\fi
-}
+	%	\if\@lang1\chapterstyletitle{Pod{\v e}kov{\' a}n{\' i}}\else\if\@lang2\chapterstyletitle{Po\v dakovanie}\else\chapterstyletitle{Acknowledgements}\fi\fi\theacknowledgements
+%	\fi
+%}
 
-\DeclareRobustCommand{\declarationofauthenticitypage}{
-	\cleardoublepage
-	\thispagestyle{empty}
+%\DeclareRobustCommand{\declarationofauthenticitypage}{
+	%\cleardoublepage
+	%\thispagestyle{empty}
 
-	~
+	%~
 	
-	\vfill
+	%\vfill
 		
 	%\if@declarationOptionSelected
 	%	\if\@lang1\chapterstyletitle{Prohl{\' a}{\v s}en{\' i}}\else\if\@lang2\chapterstyletitle{Prehl{\' a}senie}\else\chapterstyletitle{Declaration}\fi\fi\thedeclarationofauthenticity{}
@@ -266,16 +266,16 @@
 	%\else
 	%	\ClassError{FITthesis}{Declaration of authenticity unspecified}{Select the declaration of authenticity using the \declarationOfAuthenticityOption command.}
 	%\fi
-}
+%}
 
-\DeclareRobustCommand{\imprintpage}{
-	\clearpage
-	\thispagestyle{empty}
+%\DeclareRobustCommand{\imprintpage}{
+	%\clearpage
+	%\thispagestyle{empty}
 	
-	~
+	%~
 	
-	\vfill
-}
+	%\vfill
+%}
 
 \DeclareRobustCommand{\abstractpage}{
 	\chapter*{Abstrakt}
@@ -319,7 +319,7 @@
 	%\cleardoublepage
 	\tableofcontents*
 	
-	\clearpage
+	%\clearpage
 	%\listoffigures*
 	%\cleardoublepage
 	%\listoftablescond

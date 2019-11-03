@@ -291,7 +291,7 @@
 		\ClassError{FITthesis}{Czech keywords unspecified}{Specify the keywords in Czech of your thesis using \keywordsCS command.}
 	\fi
    \clearpage
-	%\vfil
+	\vfil
 
 	\if@abstractendefined
 		\chapterstyletitle{Abstract}\theabstracten

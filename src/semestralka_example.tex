@@ -39,12 +39,12 @@
 
 \abstractCS
 {
-Tato práce popisuje forenzní technologie v informačních technologiích a především potom forenzní analýzu digitálních dat. V~první kapitole je popsána digitální forenzní analýza, je rozdělena na jednolivé typy, popsány jsou jednotlivé kroky, co je předmětem forenzní analýzy. Dále také techniky, omezení, rizika, která jsou při digitální forenzní analýze aktuální. Ná závěr první kapitoly jsem popsal základní právní aspekty forenzní analýzy. V~další kapitole jsem popsal nástroje forenzní analýzy a vyjmenoval nekteré softarové a hardwarové produktu pro provádění forenzní analýzy. Ná závěr jsem se zmínil o~protikladu a~to o~anti-forenzní analýzy, která není přímo věda, ale při provádění forenzní analýzy je důležité tyto kroky znát.
+Tato práce popisuje forenzní technologie v~informačních technologiích a především potom forenzní analýzu digitálních dat. V~první kapitole je popsána digitální forenzní analýza, je rozdělena na jednolivé typy, jsou popsány jednotlivé kroky a~co je předmětem forenzní analýzy. Dále jsou popsány také techniky, omezení a rizika, která jsou při digitální forenzní analýze aktuální. Ná závěr první kapitoly jsem popsal základní právní aspekty forenzní analýzy. V~další kapitole jsem popsal nástroje forenzní analýzy a vyjmenoval nekteré softarové a hardwarové produkty pro provádění forenzní analýzy. Ná závěr jsem se zmínil o~protikladu a~to o~anti-forenzní analýze, která není přímo věda, ale při provádění forenzní analýzy je důležité tyto kroky znát.
 }
 
 \abstractEN
 {
-  This thesis describes forensic analysis in information technologies and mainly digital forensic science. The first chapter describes the digital forensic investigation, is divided into individual types; the steps and the subject of forensic analysis are described. Furthermore, the techniques, limitations, risks that are current in digital forensic analysis. At the end of the first chapter, I~described the fundamental legal aspects of forensic analysis. In the next section, I~described the tools of forensic investigation and listed some software and hardware products for performing forensic analysis. At the end of the text, I~mentioned the contradiction, the anti-forensic analysis. It is not directly science, but when do the forensic investigation, it is essential to know the steps of anti-forensic analysis.
+  This thesis describes forensic analysis in information technologies and mainly digital forensic science. The first chapter describes the digital forensic investigation, it is divided into individual types; the steps and the subject of forensic analysis are described. Furthermore, the techniques, limitations, risks that are current in digital forensic analysis are described. At the end of the first chapter, I~described the fundamental legal aspects of forensic analysis. In the next section, I~described the tools of forensic investigation and listed some software and hardware products for performing forensic analysis. At the end of the text, I~mentioned the contradiction, the anti-forensic analysis. It is not directly science, but when do the forensic investigation, it is essential to know the steps of anti-forensic analysis.
 }
 
 
@@ -68,41 +68,41 @@ Tato práce popisuje forenzní technologie v informačních technologiích a př
 \begin{introduction}
   \label{sec:uvod}
 
-V dnešní době je s~digitálními zařízenímy spojena většina každodenních činností, ať už jsou to počítače, mobilní telefony, ale v dnešní době i hodinky nebo žárovky, které například ovládáme přes svůj mobilní telefon, a~také další domácí spotřebiče. Můžeme například platit behotovostně ať už pomocí karty nebo i~chytrých hodinek. Všechny tyto digitální technologie jsou v~našem životě zastoupeny čím dál větší měrou a~nahrazují staré postupy. 
+V dnešní době je s~digitálními zařízenímy spojena většina našich každodenních činností, ať už to jsou  počítače, mobilní telefony, ale v~dnešní době i~hodinky nebo žárovky, které například ovládáme přes svůj mobilní telefon, a~také další domácí spotřebiče. Můžeme například platit bezhotovostně ať už pomocí karty nebo chytrých hodinek. Všechny tyto digitální technologie jsou v~našem životě zastoupeny čím dál větší měrou a~nahrazují staré postupy, které mnohdy velmi zjednoduší. 
 
-Všechna tyto digitální zařízení se však mohou stát terčem útoku. Útoky na digitální systémy se stavájí každodenní rutinou a~je tedy nutné umět takové útoky odhalit, bránit se proti nim. Počet útoků na tyto systémy narůstá každým rokem. Nemusí se přímo jednat jen o~útoky proti počítačům, ale například i~zneužití digitální techniky k~páchání trestného činu. Například počítače v bytě, kde proběhla vražda.
+Všechna tyto digitální zařízení se však mohou stát terčem útoku. Útoky na digitální systémy se stavájí každodenní rutinou a~je tedy nutné umět takové útoky odhalit a~bránit se proti nim. Počet útoků na tyto systémy narůstá každým rokem. Nemusí se přímo jednat jen o~útoky proti počítačům, ale například i~zneužití digitální techniky k~páchání trestného činu. Například počítače v bytě, kde proběhla vražda (kumunikace mezi vrahem a~obětí na sociální síti).
 
-Pokud se nějaký fyzická trestný čin, bude místo činu zkoumáno oprávněnými osobami. Cílem ohledání místa činu je rekonstrukce události a nalezení viníka. Důležitou součástí procesu je sběr důkazů, které představují třeba otisky prstů. Jinak tomu není ani v případě digitálních systému, kde je nutné zajistit důkazy například data po škodlivém softwaru. Tyto data jsou velice nestálá a~je nutné s~nimi náležitě pracovat.
+Pokud se stane nějaký fyzický trestný čin, bude místo činu zkoumáno oprávněnými osobami. Cílem ohledání místa činu je rekonstrukce události a~nalezení viníka. Důležitou součástí procesu je sběr důkazů, které představují třeba otisky prstů. Jinak tomu není ani v případě digitálních systému, kde je nutné zajistit důkazy, například data po škodlivém softwaru. Tyto data jsou velice nestálá a~je nutné s~nimi náležitě pracovat.
 
-Vědou, která se tímto zabývá je forenzní analýza digitálních dat (angl. digital forensics). V~této práci tuto oblast popíši a pokusíme se příblížit některé metody, nástroje, postupy, ale také stručnou histrorii. Vágně řečené jde v~této oblasti o~analýzu dat s~cílem zjistit co, kdy, kde a jak se stalo.
+Vědou, která se tímto zabývá je forenzní analýza digitálních dat (angl. digital forensics). V~této práci tuto oblast popíši a~pokusíme se příblížit některé metody, nástroje, postupy, ale také stručnou histrorii. Volně řečeno jde v~této oblasti o~analýzu dat s~cílem zjistit co, kdy, kde a jak se stalo.
  
 
 \end{introduction}
 
 \chapter{Forenzní analýza}
-Forenzní analýza je pojem pro analýzu a vyšetřování, které se prování za účelem zdokumentování události (nejčastěji v oblasti bezpečnosti). Dále zjištění jejich důvodů, průběhu a~hledání viníků a~objektivních důkazů, které by případné viníky mohli usvědčit (u soudu)\cite{for_uvod}.
+Forenzní analýza je pojem pro analýzu a~vyšetřování, které se prování za účelem zdokumentování události (nejčastěji v oblasti bezpečnosti). Dále zjištění jejich důvodů, průběhu a~hledání viníků a~objektivních důkazů, které by případné viníky mohli usvědčit (u soudu)\cite{for_uvod}.
 
-V knize \cite{RECHAndBook} je digitální forenzní analýza definována jako soubor technik a~nástrojů používaných pro hledání důkazů na počítači, které mohou být použity v~uživatelův neprospěch. Důkazy nemusíjí přímo souviset s počítačovou kriminalitou. Digitalní forenzní analýzu lze aplikovat napčíklad pří vyšetřovní trestné činnosti, vydírání, krádeží, podvodů a padělání.
+V~knize \cite{RECHAndBook} je digitální forenzní analýza definována jako soubor technik a~nástrojů používaných pro hledání důkazů na počítači, které mohou být použity v~uživatelův neprospěch. Důkazy nemusíjí přímo souviset s~počítačovou kriminalitou. Digitalní forenzní analýzu lze aplikovat například pří vyšetřování trestné činnosti, vydírání, krádeží, podvodů a padělání.
 
-Forenzní analýza v~informačních technologiích neboli také forenzní analýza digitální dat (pokud bude dále v~textu zmíněna forenzní analýza půjde už pouze jen konkrétně o~forenzní analýzu digitální dat) se zabývá výše zmíněnými problémy s využitím digitální dat, jak je popsáno v \cite{for_root}. Oproti definici výše se zde zmiňují téměř libovolná digitální data a není omezena pouze na počítač. Tato digitální data jsou pak většinou uložena na disku v~počítači, ale obecně to může být libovolné digitální médium.
+Forenzní analýza v~informačních technologiích neboli také forenzní analýza digitální dat (pokud bude dále v~textu zmíněna forenzní analýza půjde už pouze jen konkrétně o~forenzní analýzu digitální dat) se zabývá výše zmíněnými problémy s~využitím digitální dat, jak je popsáno v \cite{for_root}. Oproti definici výše se zde zmiňují téměř libovolná digitální data a~není omezena pouze na počítač. Tato digitální data jsou pak většinou uložena na disku v~počítači, ale obecně to může být libovolné digitální médium.
 
-Forenzní analýza se využívá napříč velkým množstvím oborů, například v kriminalistice, interním vyšetřovaní ve firmě, ale může být využita například i~při obnově dat nebo občanskoprávním řízení.
+Forenzní analýza se využívá napříč velkým množstvím oborů, například v~kriminalistice, interním vyšetřovaní ve firmě, ale může být využita například i~při obnově dat nebo občanskoprávním řízení.
 
-Forenzní věda byla vytvořena za účelem řešení specifických potřeb donucovacích orgánů, aby se co nejlépe využila tato nová forma elektronických důkazů, které mohou dopomoci objasntit a vyřešit daný případ. Postupy v~digitalní forenzní analýze jsou řízeny směrnice a~postupy, které je nutné dodržovat.
+Forenzní věda byla vytvořena za účelem řešení specifických potřeb donucovacích orgánů, aby se co nejlépe využila tato nová forma elektronických důkazů, které mohou dopomoci objasntit a~vyřešit daný případ. Postupy v~digitalní forenzní analýze jsou řízeny směrnice a~postupy, které je nutné dodržovat.
 
-Jak se píše v \cite{for_uvod}, počítačová forenzní věda je ve svém jádru odlišná od většiny tradičních forenzních disciplín. Počítačový materiál, který je zkoumán, a~techniky, které má provádějící technik k~dispozici, jsou většinou produkty soukromého sektoru. Kromě toho, na rozdíl od tradičních forenzních analýz, je běžně vyžadováno provádění počítačových zkoušek prakticky na jakémkoli fyzickém místě, nejen v~kontrolovaném laboratorním prostředí. Obecně není datová forenzní analýza prostorově náročná, ale může být náchylná na drobné nepřesnosti, kterým je nutné se vyvarovat, aby výsledky mohli být použitelné. Digitální forenzí analýza většinou nevýtváří přímé závěry, ale poskytuje příme informace, kterými bývají závěry podloženy.
+Jak se píše v~\cite{for_uvod}, počítačová forenzní věda je ve svém jádru odlišná od většiny tradičních forenzních disciplín. Počítačový materiál, který je zkoumán, a~techniky, které má provádějící technik k~dispozici, jsou většinou produkty soukromého sektoru. Kromě toho, na rozdíl od tradičních forenzních analýz, je běžně vyžadováno provádění počítačových zkoušek prakticky na jakémkoli fyzickém místě, nejen v~kontrolovaném laboratorním prostředí. Obecně není datová forenzní analýza prostorově náročná, ale může být náchylná na drobné nepřesnosti, kterým je nutné se vyvarovat, aby výsledky mohli být použitelné. Digitální forenzí analýza většinou nevýtváří přímé závěry, ale poskytuje příme informace, kterými bývají závěry podloženy.
 
 
 \section{Kroky digitální forenzní analýzy}
-Mezi hlavní kroky forenzní analýzi podle \cite{carroll2008computer} tedy můžeme považovat kroky: zabavení, získávání, validace a identifikace, analýza a~vykazování výsledků, které potom podrobněji popíši v~nasledujících sekcích.
+Mezi hlavní kroky forenzní analýzi podle \cite{carroll2008computer} tedy můžeme považovat kroky: zabavení, získávání, validace a~identifikace, analýza a~vykazování výsledků, které potom podrobněji popíši v~nasledujících sekcích.
 
 \subsection{Zabavení}
-Krok zabavení zahrnuje označení prvků, které budou použity v pozdějších procesech. Jsou pořizovány fotografie scény a poznámky. Například počítač je nutné zapečetit, aby nemohlo být napadeno to, že byl obsah modifikován. V \cite{for_sez} zmiňuje zajímavou otázku, na kterou je třeba v~tuto fázi odpovědět: Vytáhnout zástrčku v síti nebo ne. Ponechání systému online během pokračování může útočníka upozornit, což mu umožní vymazat stopy útoku a zničit důkazy. Útočník může také nechat přepínač, který zničí důkazy, jakmile se systém přepne do režimu offline. Za takových okolností může být nutné nebo vhodné shromáždit důkazy ze systému, když je spuštěn. Pro přijetí jakéhokoliv postupu je nutné kroky vysvětlit. Cílem fáze je zajištění a~uchování důkazů.
+Krok zabavení zahrnuje označení prvků, které budou použity v pozdějších procesech. Jsou pořizovány fotografie scény a~poznámky. Například počítač je nutné zapečetit, aby nemohlo být napadeno to, že byl obsah modifikován. V~\cite{for_sez}~zmiňuje zajímavou otázku, na kterou je třeba v~tuto fázi odpovědět: Vytáhnout zástrčku ze~sítě nebo ne. Ponechání systému online během pokračování může útočníka upozornit, což mu umožní vymazat stopy útoku a~zničit důkazy. Útočník může také nechat přepínač, který zničí důkazy, jakmile se systém přepne do režimu offline. Za takových okolností může být nutné nebo vhodné shromáždit důkazy ze systému, když je spuštěn. Pro přijetí jakéhokoliv postupu je nutné kroky vysvětlit. Cílem fáze je zajištění a~uchování důkazů.
 
-Ja se píše v \cite{palmer2002forensic}, není důležité, kde se přesně nachází, ale důležité jsou důkazy, které lze získat. Počítač může být součástí nějakého prostředí, které zahrnuje i~zvdálené brány firewall, inteligentní smerovače a~rozbočovače, poskytovatele internetu, bezdradrátová zařízení, atd\dots Je nutné shromáždit všechna tyto data a~hledat mezi nimi korelace. I~tato data mohou být pro hledání důkazů klíčová.
+Ja se píše v~\cite{palmer2002forensic}, není důležité, kde se přesně nachází, ale důležité jsou důkazy, které lze získat. Počítač může být součástí nějakého prostředí, které zahrnuje i~zvdálené brány firewall, inteligentní smerovače a~rozbočovače, poskytovatele internetu, bezdrátová zařízení, atd\dots Je nutné shromáždit všechna tyto data a~hledat mezi nimi korelace. I~tato data mohou být pro hledání důkazů klíčová.
 
 \subsection{Získávání}
-Po první fázi je přistopeno k získávání dat. Součástí této fáze je většinou i~fáze duplikace, kdy je kopie dat bezpečně uložena. Data musí být získána beze změny nebo poškození zdroje, který má být analyzován později. Nezákonné zabavení nebo nevhodný postup může ovlivnit platnosti důkazů u~soudu. Z~tohoto důvodu by metody získávání důkazů měly být forenzně spolehlivé a~ověřitelné. Získavání může být fyzická nebo logická. Při fyzickém získávání je bitový obraz snímán z~fyzického paměťového média, zatímco v~logickém získávání je řídký nebo logický obraz zachycen z~paměťového média. V~obou případech je třeba použít writeblockery, aby se zabránilo úpravě důkazů. Podle \cite{for_sez} se vždy doporučuje zahájit snímání od nejmenších po nejmenší data. Pořádí důležitosti je pak: 
+Po první fázi je přistopeno k~získávání dat. Součástí této fáze je většinou i~fáze duplikace, kdy je kopie dat bezpečně uložena. Data musí být získána beze změny nebo poškození zdroje, který má být analyzován později. Nezákonné zabavení nebo nevhodný postup může ovlivnit platnosti důkazů u~soudu. Z~tohoto důvodu by metody získávání důkazů měly být forenzně spolehlivé a~ověřitelné. Získavání může být fyzická nebo logická. Při fyzickém získávání je bitový obraz snímán z~fyzického paměťového média, zatímco v~logickém získávání je logický obraz zachycen z~paměťového média. V~obou případech je třeba použít writeblockery, aby se zabránilo úpravě dat na disku. Podle \cite{for_sez} se vždy doporučuje zahájit snímání od nejmenších po největší data. Pořádí důležitosti je pak: 
 
 \begin{enumerate}
 \item Registry, cache
@@ -116,58 +116,58 @@ Po první fázi je přistopeno k získávání dat. Součástí této fáze je v
 
 \subsection{Validace a identifikace}
 
-Data jsou tedy většinou duplikována na jiné médium. Duplicitní obrázek musí být ověřen jestli je totožný se zdrojem, porovnáním hodnoty hash získaného obrazu nebo kopie a~původních dat médií nebo kontrolním součtem.
+Data jsou tedy většinou duplikována na jiné médium. Duplicitní obrázek musí být ověřen jestli je totožný se zdrojem. Například porovnáním hodnoty hash získaného obrazu nebo kopie a~původních dat médií nebo kontrolním součtem.
 
 
-Podle \cite{carroll2008computer} je postup následující: Technici opakují proces identifikace pro každou položku v seznamu extrahovaných dat. Nejprve určují, o~jaký typ položky jde. Pokud pro forenzní žádost není relevantní, jednoduše ji označí jako zpracovanou a~přesunou se dále. Stejně jako ve fyzickém vyhledávání, pokud technik narazí na věc, která je usvědčující, ale mimo rozsah původního příkazu k~prohlídce, doporučuje se, aby examinátor okamžitě zastavil veškerou činnost, informoval příslušné osoby, včetně žadatele, a~počkal pro další pokyny. Například orgány činné v trestním řízení by mohly zabavit počítač jako důkaz o~daňových podvodech, ale zkoušející může najít obrázek z jiné trestné čínnosti. Důležité je se pokusit rožšířit pravomoce pro další práci.
+Podle \cite{carroll2008computer} je postup následující: Technici opakují proces identifikace pro každou položku v seznamu extrahovaných dat. Nejprve určují, o~jaký typ položky jde. Pokud pro forenzní žádost není relevantní, jednoduše ji označí jako zpracovanou a~přesunou se dále. Stejně jako ve fyzickém vyhledávání, pokud technik narazí na věc, která je usvědčující, ale mimo rozsah původního příkazu k~prohlídce, doporučuje se, aby examinátor okamžitě zastavil veškerou činnost, informoval příslušné osoby, včetně žadatele, a~počkal pro další pokyny. Například orgány činné v~trestním řízení by mohly zabavit počítač jako důkaz o~daňových podvodech, ale technik může najít obrázek z~jiné trestné čínnosti. Důležité je se pokusit rožšířit pravomoce pro další zkoumání.
 
 Dále také technik může data, která ukazují na zcela nový potenciální zdroj dat. Například mohou najít nový e-mailový účet. V~tomto okamžiku je vhodné, aby zkoušející informovali žadatele o~svých počátečních zjištěních.
 
 \subsection{Analýza}
-Ve fázi analýzy připojí technik všechny zjištěné informace a~vykreslí kompletní obrázek pro žadatele\cite{carroll2008computer}. U~každé položky v seznamu relevantních údajů technici odpovídají na otázky zmíněné v úvodu a~to co, kdy, kde, kdo a~jak. Je zde snaha o~co nejpodrobnější vysvětlení.
+Ve fázi analýzy připojí technik všechny zjištěné informace a~vykreslí kompletní obrázek pro žadatele \cite{carroll2008computer}. U~každé položky v seznamu relevantních údajů technici odpovídají na otázky zmíněné v~úvodu a~to co, kdy, kde, kdo a~jak. Je zde snaha o~co nejpodrobnější vysvětlení.
 
-Zkoušející často dokážou vytvořit nejcennější analýzu tím, že se podívají na to, kdy se něco stalo, a~vytvářejí časovou osu, která vypráví souvislý příběh \cite{carroll2008computer}. U káždého souboru nebo informace je snaha o~zasazení na osu tedy o~zjištění, kdy byla vytvořena, zpřístupněna, změněna, přijata, odeslána, zobrazena, odstraněna a~spuštěna. 
+Zkoušející často dokážou vytvořit nejcennější analýzu tím, že se podívají na to, kdy se něco stalo, a~vytvářejí časovou osu, která vypráví souvislý příběh \cite{carroll2008computer}. U~káždého souboru nebo informace je snaha o~zasazení na osu tedy o~zjištění, kdy byla vytvořena, zpřístupněna, změněna, přijata, odeslána, zobrazena, odstraněna a~spuštěna. 
 
-Během tohoto postupu by měly být dodržovány vhodné metodiky a standardy (popsané v~následující části)\cite{for_sez}. Vyšetřovatel by měl prozkoumat získanou kopii nebo obraz média, nikdy ne originálního média. Na rozdíl od fáze zabavení a~identifikace vyžaduje fáze analýzy odborníky. Technici musí mít řádné znalosti a~musí být řádně vyškoleni. 
+Během tohoto postupu by měly být dodržovány vhodné metodiky a~standardy (popsané v~následující části)\cite{for_sez}. Vyšetřovatel by měl prozkoumat získanou kopii nebo obraz média, nikdy ne originálního médium. Na rozdíl od fáze zabavení a~identifikace vyžaduje fáze analýzy odborníky. Technici musí mít řádné znalosti a~musí být řádně vyškoleni. 
 
 
-\uv{\textit{K~vyhledávání konkrétních důkazů se používají dva druhy analýz. První je analýza fyzická, která má za úkol najít například nějaký řetězec z obsahu disku a to v rámci všech sektorů disku, který berete jako celek. Logická analýza spočívá v analýze jednotlivých souborů.  Mezi Logickou patří například soubory v souborovém systému.}}\cite{for_root} Podle toho se tato analýza se bude lišit pro různé souborové systémy (Windows, Linux).
+\uv{\textit{K~vyhledávání konkrétních důkazů se používají dva druhy analýz. První je analýza fyzická, která má za úkol najít například nějaký řetězec z obsahu disku a~to v~rámci všech sektorů disku, který berete jako celek. Logická analýza spočívá v~analýze jednotlivých souborů.  Mezi Logickou patří například soubory v souborovém systému.}}\cite{for_root} Podle toho se tato analýza se bude lišit pro různé souborové systémy (Windows, Linux).
 
 \subsection{Vykazování výsledků}
-Na závěr je nutné vytvořit zprávu s~výsledky. Ve zprávě musí být popsáný všechny kroky provedené během šetření. Obsahuje zprávy o předchozích krocích a~především získaní dat, jejich ověření a~analýzu. Je nutné uvést všechny nástroje a~hardwarové prvky. Celý postup musí být opakovatelný nezávislou osobou a~také musí být ověřitelná nezaujatost, nestrannost a nezávislost. Výsledky musí jasně prezentovatelné i~osobám mimo daný obor.
+Na závěr je nutné vytvořit zprávu s~výsledky. Ve zprávě musí být popsáný všechny kroky provedené během šetření. Obsahuje zprávy o~předchozích krocích a~především získaní dat, jejich ověření a~analýzu. Je nutné uvést všechny nástroje a~hardwarové prvky. Celý postup musí být opakovatelný nezávislou osobou a~také musí být ověřitelná nezaujatost, nestrannost a~nezávislost. Výsledky musí jasně prezentovatelné i~osobám mimo daný obor.
 
 
 
 
 
 \section{Typy forenzní analýzy}
-Dále můžeme forenzní analýzu rozdělit na nasledující typy tak jak je uvedeno v \cite{for_types}. V~jiné literatuře je možné narazit i~na jiné rozdělení, které je bývají většinou stručnější.
+Dále můžeme forenzní analýzu rozdělit na nasledující typy, tak jak je uvedeno v~\cite{for_types}. V~jiné literatuře je možné narazit i~na jiné rozdělení, které je bývají většinou stručnější.
 
 \subsection{Počítačová forenzní analýza}
 Identifikace, uchování, sběr, analýza a podávání zpráv o~důkazech zjištěných na počítačích, notebookech a~úložných médiích na podporu vyšetřování a~soudních řízení.
 
 \subsection{Sítová forenzní analýzas}
-Monitoring, zachytávání a~ukládání provozu na síti. Může sloužit k~odvrácení útoků. Sledování abnormálního provozu na síti je jeden z prvních ukazatelů na problém. Analýza této vrstvy zahrnuje analýzu sítových paketů a jednotlivýh sítových protokolů\cite{carrier2003defining}.
+Monitoring, zachytávání a~ukládání provozu na síti. Může sloužit k~odvrácení útoků. Sledování abnormálního provozu na síti je jeden z~prvních ukazatelů na problém. Analýza této vrstvy zahrnuje analýzu sítových paketů a~jednotlivýh sítových protokolů\cite{carrier2003defining}.
 
 \subsection{Forenzní analýza  mobilních telefonů}
 Získávání elektronických důkazů z~mobilních telefonů, smartphonů, SIM karet, PDA, zařízení GPS, tabletů a~herních konzol.
 
 \subsection{Forenzní analýza obrázků}
-Extrakce a~analýza digitálně pořízených fotografických obrazů za účelem ověření jejich pravosti obnovením metadat obrazového souboru s cílem zjistit jeho historii \cite{for_types}.
+Extrakce a~analýza digitálně pořízených fotografických obrazů za účelem ověření jejich pravosti obnovením metadat obrazového souboru s~cílem zjistit jeho historii \cite{for_types}.
 
 \subsection{Digitální analýza videa/audia}
-Sběr, analýza a hodnocení zvukových a obrazových záznamů. Věda je zavedením pravosti o~tom, zda je záznam originální a~zda s~ním bylo manipulováno, ať už zlovolně nebo náhodně.
+Sběr, analýza a~hodnocení zvukových a obrazových záznamů. Věda je zavedením pravosti o~tom, zda je záznam originální a~zda s~ním bylo manipulováno, ať už zlovolně nebo náhodně.
 
 \subsection{Analýza operační paměti}
-Získání a~rekontrukce dat získaných z~operační paměti RAM. Vrstva, která převádí bajty pamětového média na procesy a~systémová data a~oblast zahrnuje identifikaci probíhajícího kódu a~získaní citlivých dat, která nebyla uložena jinde\cite{carrier2003defining}. 
+Získání a~rekontrukce dat získaných z~operační paměti RAM. Vrstva, která převádí bajty pamětového média na procesy a~systémová data a~oblast zahrnuje identifikaci probíhajícího kódu a~získaní citlivých dat, která nebyla uložena jinde \cite{carrier2003defining}. 
 
 
 
 
 \section{Předmět forenzní analýzy}
 
-Předmětem forenzní analýzy jsou nejčastěji data, která se nachazení na mediích v podobě souborů, která můžou být označovaná jako platná data. Dále data nelatná, které můžou představovat smazané soubory, fragmenty dat (smazané soubory, které byly částěční přepsány). Dále to pak můžou představovat data v opečační pamětí, která jsou nestálá a při vypnutí počítače tyto data zanikají. Data představují kontex programů, bežící kód a~proměné v~proměných. Záznamy běžících aplikací v podobě logů. 
-Aby analýza digitálních dat byla forenzní analýzou, musí splňovat body udedené v kapitole \ref{body} a také nesmí porušit  žádné zákony.
+Předmětem forenzní analýzy jsou nejčastěji data, která se nachazení na mediích v podobě souborů, která můžou být označovaná jako platná data. Dále data nelatná, které můžou představovat smazané soubory, fragmenty dat (smazané soubory, které byly částěční přepsány). Dále to pak můžou představovat data v opečační pamětí, která jsou nestálá a~při vypnutí počítače tyto data zanikají. Data představují kontex programů, bežící kód a~proměné v~proměných. Záznamy běžících aplikací v~podobě logů. 
+Aby analýza digitálních dat byla forenzní analýzou, musí splňovat body udedené v~kapitole \ref{body}~a~také nesmí porušit žádné zákony.
 
 
 
@@ -179,24 +179,22 @@ Během forenzní analýzy je možné využít některé techniky. Zde jsou ty ne
 
 \item \textbf{Analýza za běhu} - Technika analýzy běžícího systému pomocí nástrojů systémových administrátorů. Tato technika je důležitá především k~získaní dat z~operační paměti, dále také pokud je cílový systém šífrován, může být využit k~získaní šifrovacích klíčů, aby disky a~data byla použítelná i~po vypnutí systému. Může být také obraz disku vytvořen ještě před vypnutím systému.
 
-\item \textbf{Smazané soubory} - Nejběžnější technikou používanou v~počítačové forenzní analýze je obnova smazaných dat. Moderní software mají svoje vlastní nástroje pro obnovu smazaných dat. Data v operačních systémech nejsou při odstarnění fyzicky odstraněna, protože tento proces není fyzicky možný. Data je možné pouze přepisovat a~přepsání dat náhodnými. Tento postup je ale časově náročný proto není využívaný. Vyšetřovatelům toto umožňuje rekonstruovat data z~fyzických diskových sektorů. Pro rekonstrukci smazaných dat uvnitř diskového obrazu se používá tzv. „File carving“, který hledá hlavičky známých souborů \cite{for_w}. 
+\item \textbf{Smazané soubory} - Nejběžnější technikou používanou v~počítačové forenzní analýze je obnova smazaných dat. Moderní software mají svoje vlastní nástroje pro obnovu smazaných dat. Data v~operačních systémech nejsou při odstarnění fyzicky odstraněna, protože tento proces není fyzicky možný. Data je možné pouze přepisovat a~přepsání dat náhodnými. Tento postup je ale časově náročný,  proto není využívaný. Vyšetřovatelům toto umožňuje rekonstruovat data z~fyzických diskových sektorů. Pro rekonstrukci smazaných dat uvnitř diskového obrazu se používá tzv. „File carving“, který hledá hlavičky známých souborů \cite{for_w}. 
 
 \item \textbf{Stochastická forenzní analýza} - Je metoda využívající stochastické vlastnosti v~operačním systému. Využití pravděpodobnosti a~zákonů velkých čísel. Tato metoda se nejčastěji využívá pro vyšetřování krádeže dat.
 
-\item \textbf{Steganografie} - Jedna z~technik využívaná pro ukrývání dat je za pomoci steganografie. S~její pomocí se dají data schovat v~jiném souboru. Soubor může představovat libovolný formát. Můžem takto ukrýt například důležitou zprávu nebo šifry. Počítačoví forenzní profesionálové mohou odhalit pozměnění originálního obrázku pomocí porovnání jeho haše s~hashem originálního obrázku, který ale nemusí být k~dispozici. Uložená data můžou být uložena v~obrázku, který byl náhodně generován. Vizuélně mohou být obrázky stejné, ale hash se může lišit, protože hashovací funkce by se měla chovat jako náhodné orákulum, které přidělí hash nějaké libovolně dlouhé sequenci. Tedy při změně jednoho bitu se hash zmení radíkálně na libovolnou jnou hodnotu.
-
-
+\item \textbf{Steganografie} - Jedna z~technik využívaná pro ukrývání dat, je ukrytí za pomoci steganografie. S~její pomocí se dají data schovat v~jiném souboru. Soubor může představovat libovolný formát. Můžem takto ukrýt například důležitou zprávu nebo šifry. Počítačoví forenzní profesionálové mohou odhalit pozměnění originálního obrázku pomocí porovnání jeho haše s~hashem originálního obrázku, který ale nemusí být k~dispozici. Uložená data můžou být uložena v~obrázku, který byl náhodně generován. Vizuélně mohou být obrázky stejné, ale hash se může lišit, protože hashovací funkce by se měla chovat jako náhodné orákulum, které přidělí hash nějaké libovolně dlouhé sekvenci. Tedy při změně jednoho bitu se hash změní radíkálně na libovolnou jnou hodnotu.
 \end{itemize}
 
 
 
 \section{Omezení}
 
-Digitalni forenzní analýza se velice často dotýká velmi citlivých dat. Z tohoto faktu zde můžou plynout určitá omezení. Na zkoumání  digitálních medíích se vztahují zákony a~předpisy. Takové jsou definovány mezinárodně, ale i~vnitrostátně. Nejčastější omezení může být proti monitorování sítě a~čtení komunikace jako třetí strana. V~zákoně je také přesně předepsáno, co může být předmětem zabavení. \uv{\textit{Právo jednotlivce na soukromí je jednou z~oblastí digitální forenzní vědy, která je soudem stále do značné míry nerozhodnuta}}\cite{for_wi}. Například ve Spojených Státech Amrických je zákon na ochranu osobních údajů v~elektronických komunikací velice silný a~omezuje schopnosti vyšetřovatelů získávat důkazy. Zde je rozlišováno mezí přenášenou a~uloženou komunikací. Sledování přenášené komunikace je témeř většinou silný zásah do soukromí. Legislativa je jedním z omezením, se kterým se forenzní technik musí potýkat. Dalším omezením může být například nedostatečný výkon současných počítačů například k~prolamování šifer nebo k~analýze v~reálném čase. 
+Digitalni forenzní analýza se velice často dotýká velmi citlivých dat. Z~tohoto faktu zde můžou plynout určitá omezení. Na zkoumání  digitálních mediích se vztahují zákony a~předpisy. Takové jsou definovány mezinárodně, ale i~vnitrostátně. Nejčastější omezení může být proti monitorování sítě a~čtení komunikace jako třetí strana. V~zákoně je také přesně předepsáno, co může být předmětem zabavení. \uv{\textit{Právo jednotlivce na soukromí, je jednou z~oblastí digitální forenzní vědy, která je soudem stále do značné míry nerozhodnuta}}\cite{for_wi}. Například v~Americe je zákon na ochranu osobních údajů v~elektronických komunikací velice silný a~omezuje schopnosti vyšetřovatelů získávat důkazy. Zde je rozlišováno mezí přenášenou a~uloženou komunikací. Sledování přenášené komunikace je témeř většinou silný zásah do soukromí. Legislativa je jedním z~omezením, se kterým se forenzní technik musí potýkat. Dalším omezením může být například nedostatečný výkon současných počítačů například k~prolamování šifer nebo k~analýze v~reálném čase. 
 
 
 \section{Rizika}
-Další částí jsou rizika, které mohou potkat forenzní techniky při práci. Při práci s~digitálními daty nelze rizika nikdy vyloučit, ale pokud nějaký problém nastane tak to většinou zkončí nepoužitelnou analýzou. Avšak i~při dodržování všech bezpečnostních pravidel není možné úplně vyloučit, je pouze možné tyto rizika snížit na minimum. Problémy můžou být způsobeny vadou techniky, pouruchy zkoumaného zařízení nebo i~zvolenou technikou. Může například selhat zkoumaný disk při vytváření bitové kopie. Dálším problémem mohou být rizika, která vzniknou lidskou chybou. Technik například nedodrží přesné postupy a~chce si práci usnadnit. Problémy a~chyby způsobené lidským faktorem lze například ještě rozdělit na úmyslné, neúmyslné nebo z nedbalosti. V~práci \cite{for_baka} jsou uvedena a~zmíňena především následůjící rizika. Většině těchto rizik lze však předcházet dodržováním doporučení, předpisů, zákonů a~obecných bezpečnostních pravidel:
+Další částí jsou rizika, které mohou potkat forenzní techniky při práci. Při práci s~digitálními daty nelze rizika nikdy vyloučit, ale pokud nějaký problém nastane tak to většinou zkončí nepoužitelnou analýzou. Avšak i~při dodržování všech bezpečnostních pravidel není možné úplně vyloučit, je pouze možné tyto rizika snížit na minimum. Problémy můžou být způsobeny vadou techniky, pouruchou zkoumaného zařízení nebo i~zvolenou technikou. Může například selhat zkoumaný disk při vytváření bitové kopie. Dalším problémem mohou být rizika, která vzniknou lidskou chybou. Technik například nedodrží přesné postupy a~chce si práci usnadnit. Problémy a~chyby způsobené lidským faktorem lze například ještě rozdělit na úmyslné, neúmyslné nebo z nedbalosti. V~práci \cite{for_baka} jsou uvedena a~zmíňena především následůjící rizika. Většině těchto rizik lze však předcházet dodržováním doporučení, předpisů, zákonů a~obecných bezpečnostních pravidel:
 
 \begin{itemize}
 \item Nezajištění všech digitálních stop
@@ -213,15 +211,19 @@ Další částí jsou rizika, které mohou potkat forenzní techniky při práci
 
 \section{Právní aspekty}
 
-Aby mohla být analýza dat považována za digitální forenzní analýzu a~její výsledky použity u~soudu jako důkazy, což je cíl digitální forenzní analýzy, můsí splňovat konkrétní vlastnosti. Pokud bude analýza dat splňovat tyto vlastnisti je veliká šánce, že její výsledky budou důležitým důkazem u soudu. Kromě nepodjatosti nejsou tyto vlastnosti ukotveny v~zákoně a~jedná se pouze o~doporučení přejatá ze zahraničí. Podle \cite{svetlik2010digitalni} jsou to následující aspekty:
+Aby mohla být analýza dat považována za digitální forenzní analýzu a~její výsledky použity u~soudu jako důkazy, což je cíl digitální forenzní analýzy, můsí splňovat konkrétní vlastnosti. Pokud bude analýza dat splňovat tyto vlastnosti je veliká šánce, že její výsledky budou důležitým důkazem u soudu. Kromě nepodjatosti nejsou tyto vlastnosti ukotveny v~zákoně a~jedná se pouze o~doporučení přejatá ze zahraničí. Podle \cite{svetlik2010digitalni} jsou to následující aspekty:
 
 \begin{itemize}
 
-\item \textbf{Legalita} - Všechny informace (záznamy hovorů, přenos na síti) nebo předměty(notebooky, flesh disk), které jsou využity v digitální forenzní analýze musí být získány legálním způsobem. Získávání dat se musí řídit zákony země, kde je prováděno. Porušním může být například ukradený flesh disk nebo napríklad nelegální nahrávka telefonu. 
-\item \textbf{Integrita} - Musí být jednoznačné, co je s~daty prováděno, a~že nemohlo nebo nemůže dojít k~manipulaci. Podle článku \cite{svetlik2010digitalni} porušením může být například jakýkoliv zápis na zkoumaný disk, protože mohou být přepsány sektory, na který se mohou nacházet data. V~publikaci je uveden konkrétní příklad, ale obecně je už témeř poviností k~získaný datům přistupovat pomocí blokatorů zápisu, které jsou popsány v~kapitole \ref{blokatory}.
-\item \textbf{Opakovatelnost} - Můsí být použitý takový způsob analýzy, aby byly všechny experimenty opakovatelné. K~tomuto je možné využít další hardwarové zařízení a~to duplikátor, který je popsán v~kapitole \ref{duplikatory}. Práce je prováděna na kopii dat a~experiment může být pozousez ekvivaletnímy metodami nebo zopakován stejným postupem. Porušením opět může být přiklad nahoře, tedy že byla pozměnena původní data a~nelze již experimenty opakovat. Podle \cite{svetlik2010digitalni} může být porušením například i~pokud se mají prozkoumat videozáznamy jestli jsou totožné a~technik použije monitor vysokého rozlišení a~bude oba videozaznamy pouštět a~posuzovat. 
+\item \textbf{Legalita} - Všechny informace (záznamy hovorů, přenos na síti) nebo předměty (notebooky, flesh disk), které jsou využity v~digitální forenzní analýze musí být získány legálním způsobem. Získávání dat se musí řídit zákony země, kde je prováděno. Porušním může být například ukradený flesh disk nebo například nelegální nahrávka telefonu. 
+
+\item \textbf{Integrita} - Musí být jednoznačné, co je s~daty prováděno, a~že nemohlo nebo nemůže dojít k~manipulaci. Podle článku \cite{svetlik2010digitalni} porušením může být například jakýkoliv zápis na zkoumaný disk, protože mohou být přepsány sektory, na který se mohou nacházet data. V~publikaci je uveden konkrétní příklad, ale obecně je už témeř poviností k~získaný datům přistupovat pomocí blokatorů zápisu, které jsou popsány v~kapitole~\ref{blokatory}.
+
+\item \textbf{Opakovatelnost} - Můsí být použitý takový způsob analýzy, aby byly všechny experimenty opakovatelné. K~tomuto je možné využít další hardwarové zařízení a~to duplikátor, který je popsán v~kapitole \ref{duplikatory}. Práce je prováděna na kopii dat a~experiment může být posouzen ekvivaletnímy metodami nebo zopakován stejným postupem. Porušením opět může být přiklad nahoře, tedy že byla pozměnena původní data a~nelze již experimenty opakovat. Podle \cite{svetlik2010digitalni} může být porušením například i~pokud se mají prozkoumat videozáznamy jestli jsou totožné a~technik použije monitor vysokého rozlišení a~bude oba videozaznamy pouštět a~posuzovat. Je nutné použít objektivní metodu.
+
 \item \textbf{Nepodjatos} - Nezávislost zkoumaného objektu na subjektu provadějící forenzní analýzu. Tady to může být například pokud technik, který instaloval server poté bude dělat forenzní analýzu na útokem, který byl na server provedený. I~když instalace byla na základě smlouvy o~dílo a~zkoumání utoku se řídí trestním právem. 
-\item \textbf{Dostatečná dokumentace} - Kážkou forenzní analýzu musí doprovázet podrobná dokumentace, ze které jsou jásně všechny tyto body a~celý postup lze podle ní zopakovat. Dále v~ní musí být specifikovány závěry, které z~forenzní analýzy plynou. Z~nedostatečné dokumentace může být celá analýza označena za neplatnou a~tedy i~důkazy, které by jinak mohli obžalovaného usvědčit.
+
+\item \textbf{Dostatečná dokumentace} - Každou forenzní analýzu musí doprovázet podrobná dokumentace, ze které jsou jásně všechny tyto body a~celý postup lze podle ní zopakovat. Dále v~ní musí být specifikovány závěry, které z~forenzní analýzy plynou. Z~nedostatečné dokumentace může být celá analýza označena za neplatnou a~tedy i~důkazy, které by jinak mohli obžalovaného usvědčit.
 
 \end{itemize}
 
@@ -233,14 +235,14 @@ Ve forenzní analýze je používáno mnoho nástrojů, který proces usnadňuj�
 Dále tu na každý takovýto nástroj máme podle \cite{for_need} následující požadavky:
 
 \begin{itemize}
-\item \textbf{Použitelnost} - Pro řešení komplexního problému je nutné, aby nástroje poskytovali dostatečnou vrstvu abstrakce. Data na nejnižším formátu je velice těžké analyzovat. Minimálně musí poskytovatabstraktní vrstvy, které jsou uvedeny jako hraniční vrstvy. Zároveň je nutné, aby nástro prezentoval data v~jasném a~přehledném formatu aby vyšetřovatel mohl data intepretovat správně. \cite{carrier2003defining}
+\item \textbf{Použitelnost} - Pro řešení komplexního problému je nutné, aby nástroje poskytovali dostatečnou vrstvu abstrakce. Data na nejnižším formátu je velice těžké analyzovat. Minimálně musí poskytovat abstraktní vrstvy, které jsou uvedeny jako hraniční vrstvy. Zároveň je nutné, aby nástro prezentoval data v~jasném a~přehledném formatu aby vyšetřovatel mohl data intepretovat správně. \cite{carrier2003defining}
 \item \textbf{Komplexnost} - Musí být schopen zpracovat veškerá data a~identifikovat ty důležitá ve všech směrech.
-\item \textbf{Presnost} - Výstup musí být přesný a ověřitelný. Musí poskytovat zpětnou vazbu o~míře jistoty.
+\item \textbf{Presnost} - Výstup musí být přesný a~ověřitelný. Musí poskytovat zpětnou vazbu o~míře jistoty.
 \item \textbf{Determiničnost} - Nástroj musí produkovat stejné výsledky pokud jsou poskytnuta stejná data a~stejná sada pravidel.
 \item \textbf{Ověřitelnost} - Výstupy musí být vzhledem k~datů ověřitelná. Ověření je prováděno ručně nebo může být provedeno pomocí druhého nástroje.
 \end{itemize}
 
-Další doporučení pro nástroje je read-only (původní data vůbec nemodifikuju. Data mohou být snadno zkopírovatelná, sice toto není nutnost, ale pro budoucí verifikaci výsledků je to žádoucí a~kopie dat bude vyžadována. 
+Další doporučení pro nástroje je read-only (původní data vůbec nemodifikují). Data mohou být snadno zkopírovatelná, sice toto není nutnost, ale pro budoucí verifikaci výsledků je to žádoucí a~kopie dat bude vyžadována. 
 
 
 \section{Hardware}
@@ -248,20 +250,20 @@ Pro digitální forenzní analýzu existuje také přímo specializovaný hardwa
 
 \subsection{Duplikátory}
 \label{duplikatory}
-Informace o duplikátorech čerpány~z~\cite{for_hard}. Duplikátory slouží k~vytvoření kompletní kopie pevných disků, paměťových karet nebo flesh disků. Dále se může jednat o~duplikátory na nějakém rozhraní například na ethernetu, kdy může být přesně sledován sítový provoz do daného počítače.
+Informace o duplikátorech čerpány~z~\cite{for_hard}. Duplikátory slouží k~vytvoření kompletní kopie pevných disků, paměťových karet nebo flesh disků. Dále se může jednat o~duplikátory na nějakém rozhraní například na ethernetu, kdy může být přesně sledován sítový provoz do a z daného počítače.
 \subsection{Blokátory zápisu}
 \label{blokatory}
-Blokátor zápisu je jakýkoliv nástroj, který umožnuje přístup k~zařízení pro ukládání dat pouze v~řežimu čtení, tak že není ohrožena integrita datového uložiště \cite{for_hard2}. Blokátory fungují tak, že filtrují I/O operace a~ty které by měli něco zapsat na médium tak zahazují. Je důležité, aby žádná část disku nebyla změňěna. Tento typ je také součástí programů popsaných dále. Nemusí se tedy jednat pouze o~fyzické zařízení, kde je na blokování speciální čip, ale i~o~součást programu.
+Blokátor zápisu je jakýkoliv nástroj, který umožnuje přístup k~zařízení pro ukládání dat pouze v~řežimu čtení, tak že není ohrožena integrita datového uložiště \cite{for_hard2}. Blokátory fungují tak, že filtrují I/O operace a~ty, které by měli něco zapsat na médium tak zahazují. Je důležité, aby žádná část disku nebyla změněna. Tento typ je také součástí programů popsaných dále. Nemusí se tedy jednat pouze o~fyzické zařízení, kde je na blokování speciální čip, ale i~o~součást programu.
 
 \section{Software}
 
 Téměř veškeré postupu forenzní analýzy jsou stadardizovány a~pro provádění forenzní analýzy existuje mnoho programů, které jsou vytvořeny podle těchto standardů. Nástroje pomáhají se vyvarovat chybám, které by mohli výsledky snehodnotit tak, že by výsledky forenzní analýzy nebyly použitelné u~soudu. Informace o~existujícím softwaru jsem čerpal z~\cite{for_soft}.
 
-První nástroj je od firmy AccessData. Forensic Toolkit FTK 7 je uznáván jako světový standard pro forenzní analýzu. Tato platforma představuje špičku v oboru analýzy digitálních dat, dešifrování, lámání hesel, a~to všechno v~intuitivním a přizpůsobitelném rozhraní. Nástroj také umožnuje pracovat s~velkými objemy dat, díky distribuované databázové struktuře.
+První nástroj je od firmy AccessData. Forensic Toolkit FTK 7 je uznáván jako světový standard pro forenzní analýzu. Tato platforma představuje špičku v~oboru analýzy digitálních dat, dešifrování, lámání hesel, a~to všechno v~intuitivním a~přizpůsobitelném rozhraní. Nástroj také umožnuje pracovat s~velkými objemy dat, díky distribuované databázové struktuře.
 
 Dálším nástrojem je například Belkasoft Evidence Center 2019 od firmy Belkasoft. Program umožňuje forenznímu expertovi snadno prohledávat, analyzovat, uchovávat a~sdílet digitální důkazy zajištěné na paměťových médiích nebo v~operační paměti počítače. Nástroj dokáže zajistit důkazy z~mnoha zdrojů, jako jsou pevné disky, obrzay paměti, zálohy iOS, Androidu či BlackBerry, nebo obrazy z~UFED, JTAG nebo chip-off analýzy \cite{for_soft}.
 
-Dalším nástrojem je třeba EnCase Forensic 8 od Guidance Software/OpenText. Nástroje nejsou levné, ale když vezmeme v úvahu, že pracujeme s~daty, která tuto hodnotu mnohdy i~převýší, tak se vyplatí investice do nástroje, který pomůže předejít chybám a~usnadní digitální forenzní analýzu.
+Dalším nástrojem je třeba EnCase Forensic 8 od Guidance Software/\-OpenText. Nástroje nejsou levné, ale když vezmeme v~úvahu, že pracujeme s~daty, která tuto hodnotu mnohdy i~převýší, tak se vyplatí investice do nástroje, který pomůže předejít chybám a~usnadní digitální forenzní analýzu.
 
 \chapter{Anti-forenzní analýza}
 
@@ -269,29 +271,25 @@ Anti-forenzní analýza je soubor technik používaných jako protiopatření k 
 
 \begin{itemize}
 
-\item \textbf{Schovávání dat} - Nemusí se jednat vždy přímo o snahu, aby data nebyla viděť nebo nebyla na místě kde jsou hledána. Typicky skryté oddíly disku, chybné sektory, skryté složky. Další možností, kdy data jsou viditelná ale nečitelná je šifrování. Zašifrování dat dostatečně silným klíčem je téměř neprolomitelné. Dálší možností může být napřiklad steganografie. Jedná se o~ukrytí zprávy. Například využítím nějakého kanálu v~obrázku.
-\item \textbf{Vymazání artefaktů} - Zde je jdná například o~důkladné smazání prázdného disku. Klasické odstranění souboru nevymaže data z~disku fyzicky. 
-\item \textbf{Nástrahy a zmatení} - Kde jsou data uložena. Trojské koně, zombii účty nebo například umyslná záměna inforací. 
-\item \textbf{Útoky proti nástrojům pro forenzní analýzu} - Ja je zmíněno v~\cite{anti-prezi}. Toto je relativně nová možnost. Je to zapříčeněno standardizací forenzní analýzy, kdy je znám přesný postup, který je prováděn softwarem. Závislost na forenzním softwaru velmi ohrožuje zkoumaná data, forenzní software může být napaden a~ovlivněn tak aby stopu zahladil napřílad. 
+\item \textbf{Schovávání dat} - Nemusí se jednat vždy přímo o snahu, aby data nebyla viděť nebo nebyla na místě kde jsou hledána. Typicky skryté oddíly disku, chybné sektory, skryté složky. Další možností, kdy data jsou viditelná ale nečitelná je šifrování. Zašifrování dat dostatečně silným klíčem je téměř neprolomitelné. Další možností může být napřiklad steganografie. Jedná se o~ukrytí zprávy. Například využítím nějakého kanálu v~obrázku.
+\item \textbf{Vymazání artefaktů} - Zde je jedná například o~důkladné smazání prázdného disku. Klasické odstranění souboru nevymaže data z~disku fyzicky. 
+\item \textbf{Nástrahy a zmatení} - Kde jsou data uložena. Trojské koně, zombii účty nebo například umyslná záměna informací. 
+\item \textbf{Útoky proti nástrojům pro forenzní analýzu} - Jak je zmíněno v~\cite{anti-prezi}. Toto je relativně nová možnost. Je to zapříčeněno standardizací forenzní analýzy, kdy je znám přesný postup, který je prováděn softwarem. Závislost na forenzním softwaru velmi ohrožuje zkoumaná data, forenzní software může být napaden a~ovlivněn tak, aby stopu napřílad zahladil. 
 
 \end{itemize}
 
 
 
 \begin{conclusion}
-V práci jsem se zabýval forenzní analýzou v~IT. Konkrétněji jsem se věnoval forenzní analýze digitální dat, která je čím dál více popularnější tím jak narůstá použivání informačních technologií. V~první části práce jsem pospal digitální forenzní analýzu. Popsal jsem kroky digitální forenzní analýzi od zabavení, získávání dat až po tvorbu dokumentace, která je v práci zmíněna několikrát a~jedná se o~velmi důležitý krok ve forenzní analýze, protože forenzní analýza slouží k~hledání důkazů, které je možné použít u~soudu a~její postup a výsledky musíjí být jasně a~srozumitelně popsány. 
+V~práci jsem se zabýval forenzní analýzou v~IT. Konkrétněji jsem se věnoval forenzní analýze digitální dat, která je čím dál více popularnější tím jak narůstá použivání informačních technologií. V~první části práce jsem pospal digitální forenzní analýzu. Popsal jsem kroky digitální forenzní analýzi od zabavení, získávání dat až po tvorbu dokumentace, která je v práci zmíněna několikrát a~jedná se o~velmi důležitý krok ve forenzní analýze, protože forenzní analýza slouží k~hledání důkazů, které je možné použít u~soudu a~její postup a výsledky musíjí být jasně a~srozumitelně popsány. 
 
-Dále jsem popsal typy forenzní analýzy tedy na jaké podkategorie lze digitální forenzní analýzu dělit. Dále také co je předmětem forenzní analýzy a~jaké jsou techniky získávání dat. V dálších podkapitolách jsem se pověnoval omezením, rizikům a~prvním aspektům jako jsou legalita, integrita, opakovatelnost, nepodjatost a~dokumentace. 
+Dále jsem popsal typy forenzní analýzy tedy na jaké podkategorie lze digitální forenzní analýzu dělit. Dále také co je předmětem forenzní analýzy a~jaké jsou techniky získávání dat. V~dalších podkapitolách jsem se pověnoval omezením, rizikům a~prvním aspektům jako jsou legalita, integrita, opakovatelnost, nepodjatost a~dokumentace. 
 
-Další kapitolu jsem věnoval nástrojům forenzní analýzy a~to jak softwarovým tak hardwarovým. V poslední kapitole jsem jen zmíníl anti-forenzní analýzu, která stojí na opačnám konci, ale o~jejích technikách je dobré vědět. 
+Další kapitolu jsem věnoval nástrojům forenzní analýzy a~to jak softwarovým tak hardwarovým. V poslední kapitole jsem jen zmíníl anti-forenzní analýzu, která stojí na opačném konci, ale o~jejích technikách je dobré vědět, aby mohla být forenzní analýza učinější. 
 
 Forenzní analýza digitálních dat spojuje velmi široký okruh témat jak je patrné z~textu. K~provádění datové forenzní anaýzy je nutné mít znalosti ze sítového provozu, hardwaru a~jeho chovaní na okolní podněty. Dále také velké škály programů. Bez daných znalostí nejsme schopni provést analýzu tak aby byl výsledek věrohodný a~použitelný. V~nejhorším případě by to vedlo ke zničení důkazů. 
 
 V~mé práci jsem popsal vědní obo digitální forenzní analýzy. Tento obor je velice obsháhlý a~je možné ho dělit na plno částí, například podle popsaných kapitol. O~každé kapitole by mohla být napsána přinejmenších stejná práce. Pro více informací doporučuji citovanou literaturu.
-
-
-
-
 
 
 \end{conclusion}
@@ -311,7 +309,7 @@ V~mé práci jsem popsal vědní obo digitální forenzní analýzy. Tento obor 
     \item[PDA] osobní digitální pomocník (malý kapesní počítač)
    
     \item[GPS] globální polohový systém
-    \item[SIM] (angl. subscriber identity module) identifikační karta ve standartu
+    \item[SIM] (angl. subscriber identity module) identifikační karta ve standardu
     
      3GPP~TS~51.011
     \item[RAM] (angl. Random-Access-Memory) Operační pamět s náhodným přístupem
